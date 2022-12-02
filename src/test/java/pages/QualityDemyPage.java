@@ -32,4 +32,31 @@ public class QualityDemyPage {
 
     @FindBy(xpath = "//img[@src=\"https://qualitydemy.com/uploads/system/393645bf994114c23be28028a47a77a0.png\"]")
     public WebElement demyPicture;
+
+    @FindBy(xpath = "//span[text()='Course manager']")
+    public WebElement courseManagerButton;
+
+    @FindBy (xpath = "//a[@class='btn btn-outline-primary btn-rounded alignToTitle']")
+    public WebElement add_newcourse;
+
+    @FindBy(xpath = "//span[text()='Requirements']")
+    public WebElement requirementsButton;
+
+    @FindBy(xpath = "//button[@onclick='appendRequirement()']")
+    public WebElement requirementsGreenPlusButton;
+
+    @FindBy(xpath = "(//button[@onclick='removeRequirement(this)'])[2]")
+    public WebElement requirementsRedMinusButton;
+
+    @FindBy (xpath = "//a[text () = 'Instructor']")
+    public WebElement instructor;
+
+    @FindBy(xpath = "//span[text()='Outcomes']")
+    public WebElement outComesButton;
+
+    @FindBy(xpath = "//button[@onclick='appendOutcome()']")
+    public WebElement outComesGreenPlusButton;
+
+    @FindBy(xpath = "(//i[@class='fa fa-minus'])[3]")
+    public WebElement outComesRedMinusButton;
 }

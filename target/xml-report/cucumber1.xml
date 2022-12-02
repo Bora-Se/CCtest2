@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="27.125">
-    <testcase classname="US0101 Quality Demy" name="Kullanici basarili bir sekilde giris yapabilmeli" time="26.529">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="23.61">
+    <testcase classname="US0031 Outcomes Ekleme Testi" name="Results should be addable with the &quot;+&quot; button" time="23.16">
         <system-out>
-            <![CDATA[Given Kullanici quality demy sayfasina gider................................passed
-When Email ve password bilgilerini girerek giris yapmali....................passed
-Then Basarili bir sekilde giris yaptigini test eder.........................passed
-Then Sayfayi kapatir........................................................passed
+            <![CDATA[Given Launch browser Go to url..............................................passed
+Then Click on Login button..................................................passed
+Then Enter correct instructor email address and password....................passed
+Then Click on the Instructor button.........................................passed
+Then Click on Course Manager from the menu under Navigation.................passed
+Then Click on Add New Course in the upper right corner of the page..........passed
+Then Click Outcomes from the row under the Course Add Form..................passed
+Then Add a box outcomes by pressing the green + button......................passed
+And Log out by closing the page.............................................passed
 ]]>
         </system-out>
     </testcase>
