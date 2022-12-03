@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="23.61">
-    <testcase classname="US0031 Outcomes Ekleme Testi" name="Results should be addable with the &quot;+&quot; button" time="23.16">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="71.046">
+    <testcase classname="US0101 Quality Demy" name="Kullanici basarili bir sekilde giris yapabilmeli" time="35.576">
         <system-out>
-            <![CDATA[Given Launch browser Go to url..............................................passed
-Then Click on Login button..................................................passed
-Then Enter correct instructor email address and password....................passed
-Then Click on the Instructor button.........................................passed
-Then Click on Course Manager from the menu under Navigation.................passed
-Then Click on Add New Course in the upper right corner of the page..........passed
-Then Click Outcomes from the row under the Course Add Form..................passed
-Then Add a box outcomes by pressing the green + button......................passed
-And Log out by closing the page.............................................passed
+            <![CDATA[Given Kullanici quality demy sayfasina gider................................passed
+When Email ve password bilgilerini girerek giris yapmali....................passed
+Then Basarili bir sekilde giris yaptigini test eder.........................passed
+Then Sayfayi kapatir........................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US1111 AutomationLogin Testi" name="Kullanici Basarili bir sekilde giris yapabilmeli" time="35.025">
+        <system-out>
+            <![CDATA[Given Kullanici "myAutomationUrl" sayfasina gider...........................passed
+Then Kullanici Signup butonuna tiklar.......................................passed
+Then Kullanici mail bolumune "mail" gonderir................................passed
+Then Kullanici password bolumune "password" gonderir........................passed
+Then Kullanici login Butonuna tiklar........................................passed
+Then Kullanici Automation sayfasina giris yaptigini test eder...............passed
+And Sayfayi kapatir.........................................................passed
 ]]>
         </system-out>
     </testcase>
