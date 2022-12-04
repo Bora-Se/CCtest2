@@ -33,9 +33,13 @@ public class AutomationExerciseStepDefinitions {
     }
     @Then("Kullanici Automation sayfasina giris yaptigini test eder")
     public void kullanici_automation_sayfasina_giris_yaptigini_test_eder() {
-        Assert.assertTrue(page.loginButonu.isDisplayed());
+        Assert.assertTrue(page.logoutButonu.isDisplayed());
     }
 
+    @Then("Kullanici sayfaya giris yapilamadigini test eder")
+    public void kullaniciSayfayaGirisYapilamadiginiTestEder() {
+        Assert.assertTrue(page.loginButonu.isDisplayed());
+    }
 }
 
 
