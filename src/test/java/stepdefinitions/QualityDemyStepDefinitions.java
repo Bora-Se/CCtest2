@@ -20,6 +20,7 @@ public class QualityDemyStepDefinitions {
         demyPage.acceptCookies.click();
 
     }
+
     @When("Email ve password bilgilerini girerek giris yapmali")
     public void email_ve_password_bilgilerini_girerek_giris_yapmali() {
         demyPage.loginLink.click();
@@ -28,14 +29,36 @@ public class QualityDemyStepDefinitions {
         demyPage.loginButton.click();
 
     }
+
     @Then("Basarili bir sekilde giris yaptigini test eder")
     public void basarili_bir_sekilde_giris_yaptigini_test_eder() {
         Assert.assertTrue(demyPage.demyPicture.isDisplayed());
 
     }
+
     @Then("Sayfayi kapatir")
     public void sayfayi_kapatir() {
         Driver.closeDriver();
     }
+
+    @Then("Kullanici Quality Signup linkine tiklar")
+    public void kullanici_quality_signup_linkine_tiklar() {
+    demyPage.signUpLink.click();
+
+    }
+
+    @Then("Kullanici {string} e ismini yazar")
+    public void kullanici_e_ismini_yazar(String string) {
+    demyPage.firstNameBox.sendKeys(ConfigReader.getProperty("bora"));
+
+    }
+
+    @Then("Kullanici {string} e soyadini yazar")
+    public void kullanici_e_soyadini_yazar(String string) {
+    demyPage.lastNameBox.sendKeys(ConfigReader.getProperty("sverige"));
+
+    }
+
+
 
 }

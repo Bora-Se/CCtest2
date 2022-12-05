@@ -15,6 +15,15 @@ public class QualityDemyPage {
     @FindBy(xpath = "//a[text()='Log in']")
     public WebElement loginLink;
 
+    @FindBy(xpath = "//*[@class='btn btn-sign-up']")
+    public WebElement signUpLink;
+
+    @FindBy(xpath = "//input[@name='first_name']")
+    public WebElement firstNameBox;
+
+    @FindBy(xpath = "//input[@name='last_name']")
+    public WebElement lastNameBox;
+
     @FindBy(xpath = "//input[@id='login-email']")
     public WebElement emailBox;
 
