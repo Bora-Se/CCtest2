@@ -11,6 +11,28 @@ public class QualityDemyPage {
 
         PageFactory.initElements(Driver.getDriver(),this);
     }
+    // Signup section locates
+    @FindBy(xpath = "//a[@class='btn btn-sign-up']")
+    public WebElement signupLink;
+
+    @FindBy(xpath = "(//input[@type='text'])[2]")
+    public WebElement firstnameBox;
+
+    @FindBy(xpath = "(//input[@type='text'])[3]")
+    public WebElement lastnameBox;
+
+    @FindBy(xpath = "(//input[@type='text'])[4]")
+    public WebElement signupEmailBox;
+
+    @FindBy(xpath = "//input[@type='password']")
+    public WebElement signupPasswordBox;
+
+    @FindBy(xpath = "(//button[@type='submit'])[2]")
+    public WebElement signupButton;
+
+    @FindBy(xpath = "//div[@class='toast-message']")
+    public WebElement hataMesaji;
+    // --------------------------------
 
     @FindBy(xpath = "//a[text()='Log in']")
     public WebElement loginLink;

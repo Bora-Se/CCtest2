@@ -19,12 +19,5 @@ public class AmazonStepDefinitions {
         Assert.assertTrue(amazonPage.amazonAramaSonucuTest.getText().contains(testMeyve));
 
     }
-    @Then("Kullanici sayfaya giris yapilamadigini test eder")
-    public void kullanici_sayfaya_giris_yapilamadigini_test_eder() {
-
-
-
-    }
-
 
 }

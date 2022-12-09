@@ -1,4 +1,4 @@
-@demy
+@US1111
 Feature: US1111 AutomationLogin Testi
 
   Scenario: Kullanici Basarili bir sekilde giris yapabilmeli
