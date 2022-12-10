@@ -40,6 +40,7 @@ public class AutomationExerciseStepDefinitions {
     public void kullaniciSayfayaGirisYapilamadiginiTestEder() {
         Assert.assertTrue(page.loginButonu.isDisplayed());
     }
+
 }
 
 

@@ -3,6 +3,7 @@ package stepdefinitions;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.Select;
 import pages.AmazonPage;
 
 public class AmazonStepDefinitions {
@@ -11,7 +12,7 @@ public class AmazonStepDefinitions {
 
     @Then("Kullanici amazon arama kutusunda {string} arama yapar")
     public void kullanici_amazon_arama_kutusunda_arama_yapar(String istenenMeyve) {
-    amazonPage.amazonAramaKutusu.sendKeys(istenenMeyve + Keys.ENTER);
+        amazonPage.amazonAramaKutusu.sendKeys(istenenMeyve + Keys.ENTER);
 
     }
     @Then("Kullanici arattigi {string} test eder")
@@ -20,4 +21,10 @@ public class AmazonStepDefinitions {
 
     }
 
+    @Then("Kullanici arama kutusundaki drop down menusunden {string} secer")
+    public void kullaniciAramaKutusundakiDropDownMenusundenSecer(String istenilenMenu) {
+        Select select = new Select(amazonPage.dropDownMenu);
+        select.selectByVisibleText(istenilenMenu);
+
+    }
 }

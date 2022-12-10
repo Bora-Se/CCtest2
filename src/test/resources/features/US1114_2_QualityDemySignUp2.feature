@@ -1,5 +1,5 @@
 Feature: US1115 Sign Up Testi
-  @US1115
+  @US1114-2
   Scenario Outline: Kullanici yanlis formatta bilgiler girdiginde uyelik hesabi olusturamamali
     Given Kullanici "myUrl" sayfasina gider
     Then Kullanici Quality Demy login sayfasinda sign up linkine tiklar
