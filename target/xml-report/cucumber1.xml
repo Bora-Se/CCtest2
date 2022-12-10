@@ -1,62 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="6" time="119.286">
-    <testcase classname="US1115 Amazon Genel Test" name="Kullanici Drop downdan urun secip onu aratir, sonuclari karsilastirir" time="18.467">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="45.073">
+    <testcase classname="US1116 Amazon Change Testi" name="Kullanici dil menusunden para birimini degistirdiginde urun fiyat birimlerinin degistigini test eder" time="23.163">
         <system-out>
             <![CDATA[Given Kullanici "amazonUrl" sayfasina gider.................................passed
-Then Kullanici arama kutusundaki drop down menusunden "Arts & Crafts" secer.passed
-Then Kullanici amazon arama kutusunda "Mona Lisa" arama yapar...............passed
-Then Kullanici arattigi "Mona Lisa" test eder...............................passed
+Then Kullanici dil bolumune gider ve change butonuna tiklar.................passed
+Then Kullanici Ayarlar kisminda para birimi olarak Turk Lirasini secer......passed
+Then Kullanici yapilan degisikleri kaydeder.................................passed
+Then Kullanici amazon arama kutusunda "nutella" arama yapar.................passed
+Then Kullanici urunlerin para birimi olarak Turk Lirasi oldugunu test eder..passed
 And Sayfayi kapatir.........................................................passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="US1115 Amazon Genel Test" name="Kullanici Drop downdan urun secip onu aratir, sonuclari karsilastirir 2" time="16.838">
+    <testcase classname="US1116 Amazon Change Testi" name="Kullanici sayfanin alt kismindan para birimini degistirdiginde urun fiyat birimlerinin degistigini test eder" time="21.324">
         <system-out>
             <![CDATA[Given Kullanici "amazonUrl" sayfasina gider.................................passed
-Then Kullanici arama kutusundaki drop down menusunden "Automotive" secer....passed
-Then Kullanici amazon arama kutusunda "Lastik" arama yapar..................passed
-Then Kullanici arattigi "Lastik" test eder..................................passed
-And Sayfayi kapatir.........................................................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="US1115 Amazon Genel Test" name="Kullanici Drop downdan urun secip onu aratir, sonuclari karsilastirir 3" time="29.111">
-        <system-out>
-            <![CDATA[Given Kullanici "amazonUrl" sayfasina gider.................................passed
-Then Kullanici arama kutusundaki drop down menusunden "Baby" secer..........passed
-Then Kullanici amazon arama kutusunda "Biberon" arama yapar.................passed
-Then Kullanici arattigi "Biberon" test eder.................................passed
-And Sayfayi kapatir.........................................................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="US1115 Amazon Genel Test" name="Kullanici Drop downdan urun secip onu aratir, sonuclari karsilastirir 4" time="20.732">
-        <system-out>
-            <![CDATA[Given Kullanici "amazonUrl" sayfasina gider.................................passed
-Then Kullanici arama kutusundaki drop down menusunden "Beauty & Personal Care" secer.passed
-Then Kullanici amazon arama kutusunda "Krem" arama yapar....................passed
-Then Kullanici arattigi "Krem" test eder....................................passed
-And Sayfayi kapatir.........................................................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="US1115 Amazon Genel Test" name="Kullanici Drop downdan urun secip onu aratir, sonuclari karsilastirir 5" time="16.621">
-        <system-out>
-            <![CDATA[Given Kullanici "amazonUrl" sayfasina gider.................................passed
-Then Kullanici arama kutusundaki drop down menusunden "Books" secer.........passed
-Then Kullanici amazon arama kutusunda "Namik Kemal" arama yapar.............passed
-Then Kullanici arattigi "Namik Kemal" test eder.............................passed
-And Sayfayi kapatir.........................................................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="US1115 Amazon Genel Test" name="Kullanici Drop downdan urun secip onu aratir, sonuclari karsilastirir 6" time="16.954">
-        <system-out>
-            <![CDATA[Given Kullanici "amazonUrl" sayfasina gider.................................passed
-Then Kullanici arama kutusundaki drop down menusunden "Computers" secer.....passed
-Then Kullanici amazon arama kutusunda "Asus" arama yapar....................passed
-Then Kullanici arattigi "Asus" test eder....................................passed
-And Sayfayi kapatir.........................................................passed
+Then Kullanici sayfanin alt kismindan para birimi butonuna tiklar...........passed
+Then Kullanici Ayarlar kisminda para birimi olarak Turk Lirasini secer......passed
+Then Kullanici yapilan degisikleri kaydeder.................................passed
+Then Kullanici amazon arama kutusunda "asus" arama yapar....................passed
+Then Kullanici urunlerin para birimi olarak Turk Lirasi oldugunu test eder..passed
+Then Sayfayi kapatir........................................................passed
 ]]>
         </system-out>
     </testcase>
