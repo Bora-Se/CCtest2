@@ -43,4 +43,6 @@ public class AmazonPage {
 
     @FindBy (xpath = "(//span[text()='TRY'])[1]")
     public WebElement paraBirimiTest;
+
+
 }

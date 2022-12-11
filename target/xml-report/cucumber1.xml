@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="45.073">
-    <testcase classname="US1116 Amazon Change Testi" name="Kullanici dil menusunden para birimini degistirdiginde urun fiyat birimlerinin degistigini test eder" time="23.163">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="54.859">
+    <testcase classname="US 0003 Test For Social Media Icons" name="TC 0301 Facebook, Twitter, LinkedIn icons should be visible" time="14.318">
         <system-out>
-            <![CDATA[Given Kullanici "amazonUrl" sayfasina gider.................................passed
-Then Kullanici dil bolumune gider ve change butonuna tiklar.................passed
-Then Kullanici Ayarlar kisminda para birimi olarak Turk Lirasini secer......passed
-Then Kullanici yapilan degisikleri kaydeder.................................passed
-Then Kullanici amazon arama kutusunda "nutella" arama yapar.................passed
-Then Kullanici urunlerin para birimi olarak Turk Lirasi oldugunu test eder..passed
-And Sayfayi kapatir.........................................................passed
+            <![CDATA[Given Kullanici "myUrl" sayfasina gider.....................................passed
+Then Click cookies pop-up message...........................................passed
+Then Test if Facebook, Twitter, LinkedIn icons are visable..................passed
+Then Sayfayi kapatir........................................................passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="US1116 Amazon Change Testi" name="Kullanici sayfanin alt kismindan para birimini degistirdiginde urun fiyat birimlerinin degistigini test eder" time="21.324">
+    <testcase classname="US 0003 Test For Social Media Icons" name="TC_0302 Facebook, Twitter, LinkedIn icons should be clickable" time="10.683">
         <system-out>
-            <![CDATA[Given Kullanici "amazonUrl" sayfasina gider.................................passed
-Then Kullanici sayfanin alt kismindan para birimi butonuna tiklar...........passed
-Then Kullanici Ayarlar kisminda para birimi olarak Turk Lirasini secer......passed
-Then Kullanici yapilan degisikleri kaydeder.................................passed
-Then Kullanici amazon arama kutusunda "asus" arama yapar....................passed
-Then Kullanici urunlerin para birimi olarak Turk Lirasi oldugunu test eder..passed
+            <![CDATA[Given Kullanici "myUrl" sayfasina gider.....................................passed
+Given Click cookies pop-up message..........................................passed
+Given Test if Facebook, Twitter, LinkedIn icons are clickable...............passed
+Then Sayfayi kapatir........................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US 0003 Test For Social Media Icons" name="TC_0303 After clicking the Facebook, Twitter, LinkedIn icons,The company-related pages should be visible." time="29.296">
+        <system-out>
+            <![CDATA[Given Kullanici "myUrl" sayfasina gider.....................................passed
+Given Click cookies pop-up message..........................................passed
+Then Click Facebook icon....................................................passed
+Then Test if Quality Demy's Facebook page is visible........................passed
+Then Click Twitter icon.....................................................passed
+Then Test if Quality Demy's Twitter page is visible.........................passed
+Then Click LinkedIn icon....................................................passed
+And Test if Quality Demy's LinkedIn page is visible.........................passed
 Then Sayfayi kapatir........................................................passed
 ]]>
         </system-out>
