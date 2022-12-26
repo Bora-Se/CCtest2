@@ -1,34 +1,47 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="54.859">
-    <testcase classname="US 0003 Test For Social Media Icons" name="TC 0301 Facebook, Twitter, LinkedIn icons should be visible" time="14.318">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="5" time="77.745">
+    <testcase classname="US0006" name="KULLANICI YANLIS BILGILER ILE GIRIS YAPAMAZ" time="16.929">
         <system-out>
-            <![CDATA[Given Kullanici "myUrl" sayfasina gider.....................................passed
-Then Click cookies pop-up message...........................................passed
-Then Test if Facebook, Twitter, LinkedIn icons are visable..................passed
-Then Sayfayi kapatir........................................................passed
+            <![CDATA[Given Open browser go to url "myUrl"........................................passed
+Then User clicks on the login link, enters "yanlismail" and "yanlispassword" and logs in..passed
+Then User verifies that (These credentials do not match our records.) message appears in the corner.passed
+Then Closes the page........................................................passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="US 0003 Test For Social Media Icons" name="TC_0302 Facebook, Twitter, LinkedIn icons should be clickable" time="10.683">
+    <testcase classname="US0006" name="KULLANICI YANLIS BILGILER ILE GIRIS YAPAMAZ 2" time="17.875">
         <system-out>
-            <![CDATA[Given Kullanici "myUrl" sayfasina gider.....................................passed
-Given Click cookies pop-up message..........................................passed
-Given Test if Facebook, Twitter, LinkedIn icons are clickable...............passed
-Then Sayfayi kapatir........................................................passed
+            <![CDATA[Given Open browser go to url "myUrl"........................................passed
+Then User clicks on the login link, enters "yanlismail2" and "yanlispassword2" and logs in..passed
+Then User verifies that (These credentials do not match our records.) message appears in the corner.passed
+Then Closes the page........................................................passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="US 0003 Test For Social Media Icons" name="TC_0303 After clicking the Facebook, Twitter, LinkedIn icons,The company-related pages should be visible." time="29.296">
+    <testcase classname="US0006" name="KULLANICI YANLIS BILGILER ILE GIRIS YAPAMAZ 3" time="14.454">
         <system-out>
-            <![CDATA[Given Kullanici "myUrl" sayfasina gider.....................................passed
-Given Click cookies pop-up message..........................................passed
-Then Click Facebook icon....................................................passed
-Then Test if Quality Demy's Facebook page is visible........................passed
-Then Click Twitter icon.....................................................passed
-Then Test if Quality Demy's Twitter page is visible.........................passed
-Then Click LinkedIn icon....................................................passed
-And Test if Quality Demy's LinkedIn page is visible.........................passed
-Then Sayfayi kapatir........................................................passed
+            <![CDATA[Given Open browser go to url "myUrl"........................................passed
+Then User clicks on the login link, enters "yanlismail3" and "yanlispassword3" and logs in..passed
+Then User verifies that (These credentials do not match our records.) message appears in the corner.passed
+Then Closes the page........................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US0006" name="KULLANICI YANLIS BILGILER ILE GIRIS YAPAMAZ 4" time="14.136">
+        <system-out>
+            <![CDATA[Given Open browser go to url "myUrl"........................................passed
+Then User clicks on the login link, enters "yanlismail4" and "yanlispassword4" and logs in..passed
+Then User verifies that (These credentials do not match our records.) message appears in the corner.passed
+Then Closes the page........................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US0006" name="KULLANICI YANLIS BILGILER ILE GIRIS YAPAMAZ 5" time="13.818">
+        <system-out>
+            <![CDATA[Given Open browser go to url "myUrl"........................................passed
+Then User clicks on the login link, enters "yanlismail5" and "yanlispassword5" and logs in..passed
+Then User verifies that (These credentials do not match our records.) message appears in the corner.passed
+Then Closes the page........................................................passed
 ]]>
         </system-out>
     </testcase>
