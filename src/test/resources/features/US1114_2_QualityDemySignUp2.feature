@@ -10,6 +10,7 @@ Feature: US1115 Sign Up Testi
     Then Kullanici Quality Demy sign up sayfasinda sign up butonuna tiklar
     Then Kullanici uye hesabi olusturamadigini test eder
     And Sayfayi kapatir
+
     Examples:
       |istenen isim| istenen soyisim | istenen mail | istenen password |
       | a  | bb | a@gmail.com  | Password12. |
