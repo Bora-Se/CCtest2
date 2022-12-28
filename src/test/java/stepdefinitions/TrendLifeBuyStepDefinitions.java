@@ -25,6 +25,7 @@ public class TrendLifeBuyStepDefinitions    {
     }
     @Then("User clicks on the login link, enters {string} and {string} and logs in.")
     public void user_clicks_on_the_login_link_enters_and_and_logs_in(String mail, String password) {
+        ReusableMethods.bekle(2);
         life.loginLink.click();
         ReusableMethods.bekle(2);
         life.emailBox.sendKeys(ConfigReader.getProperty(mail));
@@ -61,18 +62,38 @@ public class TrendLifeBuyStepDefinitions    {
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(requestData));
         Assert.assertTrue(life.orderDetailsListBox.isEnabled());
         //Assert.assertTrue(life.orderDetailsBody.isDisplayed());
-        //My Order sayfasindaki urun boardindan Order Details butonuna tiklayinca ilgili siparisin detay sayfasina gidildigi dogrulanmali.
+        //1801- My Order sayfasindaki urun boardindan Order Details butonuna tiklayinca,
+        // ilgili siparisin detay sayfasina gidildigi dogrulanmali.
     }
 
     @Then("User verifies that sections on the Order Details page appear")
     public void userVerifiesThatSectionsOnTheOrderDetailsPageAppear() {
-    //On the Order Details page, it should be verified that the
+    //1802- On the Order Details page, it should be verified that the
     // Order ID, Status, Order date, Order Amount, Package, Price, Est arrival date, TAX Amount information is displayed.
-        Assert.assertTrue(life.orderID.isDisplayed());
+        Assert.assertTrue(life.detailsOrderID.isDisplayed());
+        Assert.assertTrue(life.detailsStatus.isDisplayed());
+        ReusableMethods.bekle(3);
+        Assert.assertTrue(life.detailsOrderDate.isDisplayed());
+        Assert.assertTrue(life.detailsOrderAmount.isDisplayed());
+        Assert.assertTrue(life.detailsPackage.isDisplayed());
+        Assert.assertTrue(life.detailsPrice.isDisplayed());
+        Assert.assertTrue(life.detailsEstArrivalDate.isDisplayed());
+        Assert.assertTrue(life.detailsTAXAmount.isDisplayed());
         //life.orderAssert();
 
     }
 
+    @Then("User verifies that sections, stages appear on the Order Details page")
+    public void userVerifiesThatSectionsStagesAppearOnTheOrderDetailsPage() {
+        // 1803- Order Details sayfasinda ilgili siparis süreci ile ilgili;
+        // Pending, Processing, Shipped, Recieved, Delivered asamalari görünür oldugu dogrulanmali.
+        Assert.assertTrue(life.detailsPending.isDisplayed());
+        Assert.assertTrue(life.detailsProcessing.isDisplayed());
+        Assert.assertTrue(life.detailsShipped.isDisplayed());
+        Assert.assertTrue(life.detailsRecieved.isDisplayed());
+        Assert.assertTrue(life.detailsDelivered.isDisplayed());
+
+    }
 
     @Then("User clicks My Account section on dashbord page")
     public void user_clicks_my_account_section_on_dashbord_page() {

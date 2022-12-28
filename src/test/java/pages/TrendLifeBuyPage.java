@@ -38,8 +38,40 @@ public class TrendLifeBuyPage {
     @FindBy(xpath = "//div[@class='dashboard_white_box_body dashboard_orderDetails_body']")
     private WebElement orderDetailsBody;
 
+    // 1802- Order ID, Status, Order date, Order Amount, Package, Price, Est arrival date, TAX Amount information is displayed.
     @FindBy(xpath = "(//h4[text()='Order ID: '])[1]")
-    public WebElement orderID;
+    public WebElement detailsOrderID;
+    @FindBy(xpath = "//h4[text()='Status: ']")
+    public WebElement detailsStatus;
+    @FindBy(xpath = "//h4[text()='Order date :  ']") //h4[text()='Order date :  ']
+    public WebElement detailsOrderDate;
+    @FindBy(xpath = "(//h4[text()='Order amount: '])[1]")
+    public WebElement detailsOrderAmount;
+    @FindBy(xpath = "//h4[text()='Package : 22122303521333']")
+    public WebElement detailsPackage;
+    @FindBy(xpath = "//h4[text()='Price: $ 124']")
+    public WebElement detailsPrice;
+    @FindBy(xpath = "//p[text()='Est arrival date: 28 Dec - 31 Dec']")
+    public WebElement detailsEstArrivalDate;
+    @FindBy(xpath = "//h4[text()='TAX Amount:  ']")
+    public WebElement detailsTAXAmount;
+
+    // 1803- Order Details sayfasinda ilgili siparis süreci ile ilgili;
+    // Pending, Processing, Shipped, Recieved, Delivered asamalari görünür oldugu dogrulanmali.
+
+    @FindBy(xpath = "//h5[text()='Pending']")
+    public WebElement detailsPending;
+    @FindBy(xpath = "//h5[text()='Processing']")
+    public WebElement detailsProcessing;
+    @FindBy(xpath = "//h5[text()='Shipped']")
+    public WebElement detailsShipped;
+    @FindBy(xpath = "//h5[text()='Recieved']")
+    public WebElement detailsRecieved;
+    @FindBy(xpath = "//h5[text()='Delivered']")
+    public WebElement detailsDelivered;
+
+
+
 
 
 
