@@ -25,6 +25,14 @@ public class TrendLifeBuyPage {
     @FindBy(xpath = "//a[text()='Dashboard']")
     public WebElement dashboardLink;
 
+    @FindBy(xpath = "//a[@class='position-relative d-flex align-items-center active']")
+    public WebElement myOrderLink;
+
+    @FindBy(xpath = "//a[text()='Order Details']")   //a[text()='Cancel Order']
+    public WebElement orderDetailsButton; //a[text()='Order Details']
+
+
+
     @FindBy(xpath = "(//a[@href=\"https://trendlifebuy.com/profile\"])[1]")
     public WebElement myAccountLink;
 

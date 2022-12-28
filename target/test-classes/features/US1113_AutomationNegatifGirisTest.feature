@@ -8,6 +8,7 @@ Feature: US 1113 Automation Negatif Giris Testi
     Then Kullanici login Butonuna tiklar
     Then Kullanici sayfaya giris yapilamadigini test eder
     Then Sayfayi kapatir
+
     Examples:
       | istenenMail            | istenenPassword     |
       | automationNegatifMail  | automationPassword  |

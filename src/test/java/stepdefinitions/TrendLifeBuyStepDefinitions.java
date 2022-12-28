@@ -26,6 +26,7 @@ public class TrendLifeBuyStepDefinitions    {
     @Then("User clicks on the login link, enters {string} and {string} and logs in.")
     public void user_clicks_on_the_login_link_enters_and_and_logs_in(String mail, String password) {
         life.loginLink.click();
+        ReusableMethods.bekle(2);
         life.emailBox.sendKeys(ConfigReader.getProperty(mail));
         // life.emailBox.sendKeys(mail);
         life.passwordBox.sendKeys(ConfigReader.getProperty(password));
@@ -37,7 +38,26 @@ public class TrendLifeBuyStepDefinitions    {
     @Then("User clicks on dashboard link")
     public void user_clicks_on_dashboard_link() {
         life.dashboardLink.click();
+        ReusableMethods.bekle(3);
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+
     }
+
+    @Then("User clicks My Order section on dashboard page")
+    public void userClicksMyOrderSectionOnDashboardPage() {
+        life.myOrderLink.click();
+        ReusableMethods.bekle(3);
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.bekle(3);
+
+    }
+
+    @Then("User verifies that the Order Details page is accessible")
+    public void userVerifiesThatTheOrderDetailsPageIsAccessible() {
+        life.orderDetailsButton.click();
+
+    }
+
     @Then("User clicks My Account section on dashbord page")
     public void user_clicks_my_account_section_on_dashbord_page() {
         actions.sendKeys(Keys.PAGE_DOWN).perform();
@@ -84,4 +104,16 @@ public class TrendLifeBuyStepDefinitions    {
     public void userVerifiesThatTheseCredentialsDoNotMatchOurRecordsMessageAppearsInTheCorner() {
         Assert.assertTrue(life.systemMessage.isDisplayed());
     }
+
+
+
+
+
+
+    @Then("User closes the page")
+    public void userClosesThePage() {
+        //Driver.closeDriver();
+    }
+
+
 }
