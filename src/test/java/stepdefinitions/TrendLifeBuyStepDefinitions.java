@@ -40,13 +40,13 @@ public class TrendLifeBuyStepDefinitions    {
         life.dashboardLink.click();
         ReusableMethods.bekle(3);
         actions.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.bekle(3);
 
     }
 
     @Then("User clicks My Order section on dashboard page")
     public void userClicksMyOrderSectionOnDashboardPage() {
         life.myOrderLink.click();
-        ReusableMethods.bekle(3);
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         ReusableMethods.bekle(3);
 
@@ -55,8 +55,24 @@ public class TrendLifeBuyStepDefinitions    {
     @Then("User verifies that the Order Details page is accessible")
     public void userVerifiesThatTheOrderDetailsPageIsAccessible() {
         life.orderDetailsButton.click();
+        String expData="details";
+        String requestData="https://trendlifebuy.com/my-purchase-order-details";
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(expData));
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(requestData));
+        Assert.assertTrue(life.orderDetailsListBox.isEnabled());
+        //Assert.assertTrue(life.orderDetailsBody.isDisplayed());
+        //My Order sayfasindaki urun boardindan Order Details butonuna tiklayinca ilgili siparisin detay sayfasina gidildigi dogrulanmali.
+    }
+
+    @Then("User verifies that sections on the Order Details page appear")
+    public void userVerifiesThatSectionsOnTheOrderDetailsPageAppear() {
+    //On the Order Details page, it should be verified that the
+    // Order ID, Status, Order date, Order Amount, Package, Price, Est arrival date, TAX Amount information is displayed.
+        Assert.assertTrue(life.orderID.isDisplayed());
+        //life.orderAssert();
 
     }
+
 
     @Then("User clicks My Account section on dashbord page")
     public void user_clicks_my_account_section_on_dashbord_page() {
@@ -114,6 +130,7 @@ public class TrendLifeBuyStepDefinitions    {
     public void userClosesThePage() {
         //Driver.closeDriver();
     }
+
 
 
 }
