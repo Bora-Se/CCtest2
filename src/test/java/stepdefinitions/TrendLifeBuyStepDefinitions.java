@@ -128,6 +128,22 @@ public class TrendLifeBuyStepDefinitions    {
         Assert.assertTrue(life.orderCancelledButton3.isDisplayed());
     }
 
+    @Then("User verifies that the product has Shipping, Billing and Payment information on the Order Details page")
+    public void userVerifiesThatTheProductHasShippingBillingAndPaymentInformationOnTheOrderDetailsPage() {
+        //1807- Order Details sayfasinda ürünle ilgili Shipping Info, Billing Info, Payment Info bilgilerine erisilebilir oldugu dogrulanmali
+        life.orderDetailsButton.click();
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.bekle(2);
+        Assert.assertTrue(life.detailsShippingInfo.isEnabled());
+        Assert.assertTrue(life.detailsBillingInfo.isEnabled());
+        Assert.assertTrue(life.detailsPaymentInfo.isEnabled());
+        Assert.assertTrue(life.detailsShippingInfo.isDisplayed());
+        Assert.assertTrue(life.detailsBillingInfo.isDisplayed());
+        Assert.assertTrue(life.detailsPaymentInfo.isDisplayed());
+
+
+    }
+
 
 
 
@@ -186,8 +202,9 @@ public class TrendLifeBuyStepDefinitions    {
 
     @Then("User closes the page")
     public void userClosesThePage() {
-        //Driver.closeDriver();
+        Driver.closeDriver();
     }
+
 
 
 }
