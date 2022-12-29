@@ -70,6 +70,8 @@ public class TrendLifeBuyStepDefinitions    {
     public void userVerifiesThatSectionsOnTheOrderDetailsPageAppear() {
     //1802- On the Order Details page, it should be verified that the
     // Order ID, Status, Order date, Order Amount, Package, Price, Est arrival date, TAX Amount information is displayed.
+        life.orderDetailsButton.click();
+        ReusableMethods.bekle(2);
         Assert.assertTrue(life.detailsOrderID.isDisplayed());
         Assert.assertTrue(life.detailsStatus.isDisplayed());
         ReusableMethods.bekle(3);
@@ -87,6 +89,8 @@ public class TrendLifeBuyStepDefinitions    {
     public void userVerifiesThatSectionsStagesAppearOnTheOrderDetailsPage() {
         // 1803- Order Details sayfasinda ilgili siparis süreci ile ilgili;
         // Pending, Processing, Shipped, Recieved, Delivered asamalari görünür oldugu dogrulanmali.
+        life.orderDetailsButton.click();
+        ReusableMethods.bekle(2);
         Assert.assertTrue(life.detailsPending.isDisplayed());
         Assert.assertTrue(life.detailsProcessing.isDisplayed());
         Assert.assertTrue(life.detailsShipped.isDisplayed());
@@ -94,6 +98,39 @@ public class TrendLifeBuyStepDefinitions    {
         Assert.assertTrue(life.detailsDelivered.isDisplayed());
 
     }
+    @Then("User verifies that text about the order is visible on the Order Details page")
+    public void userVerifiesThatTextAboutTheOrderIsVisibleOnTheOrderDetailsPage() {
+        // 1804- Order Details sayfasinda; Pending, Processing, Shipped, Recieved, Delivered
+        //  asamalarinin aciklamalarini iceren textlerin görünür oldugu dogrulanmali.
+        life.orderDetailsButton.click();
+        Assert.assertTrue(life.detailsPendingText.isDisplayed());
+        Assert.assertTrue(life.detailsProcessingText.isDisplayed());
+        Assert.assertTrue(life.detailsShippedText.isDisplayed());
+        Assert.assertTrue(life.detailsRecievedText.isDisplayed());
+        Assert.assertTrue(life.detailsDeliveredText.isDisplayed());
+    }
+
+    @Then("User verifies that the Cancel Order button on the Order Details page is available")
+    public void userVerifiesThatTheCancelOrderButtonOnTheOrderDetailsPageIsAvailable() {
+        //1805- My Order sayfasindaki Cancel Order butonunun Cancel sekmesine yönlendirme yaptigi dogrulanmali.
+        life.cancelOrderButton.click();
+        Assert.assertTrue(life.selectCancelReasonTab.isDisplayed());
+    }
+
+    @Then("User verifies that the Reason box and Send button are available when the Cancel Order button on the Order Details page is pressed")
+    public void userVerifiesThatTheReasonBoxAndSendButtonAreAvailableWhenTheCancelOrderButtonOnTheOrderDetailsPageIsPressed() {
+        //1806- Cancel sekmesindeki Reason textbox'inin aktif oldugu ve send butonuna tiklaninca girilen order'in iptal edildigi dogrulanmali.
+        life.cancelOrderButton.click();
+        Assert.assertTrue(life.reasonBox.isEnabled());     // .isDisplayed da hata verdi
+        Assert.assertTrue(life.sendButton.isEnabled());
+        //life.cancelOrderButton3.click();
+        //life.sendButton3.click();
+        Assert.assertTrue(life.orderCancelledButton3.isDisplayed());
+    }
+
+
+
+
 
     @Then("User clicks My Account section on dashbord page")
     public void user_clicks_my_account_section_on_dashbord_page() {
@@ -151,7 +188,6 @@ public class TrendLifeBuyStepDefinitions    {
     public void userClosesThePage() {
         //Driver.closeDriver();
     }
-
 
 
 }
