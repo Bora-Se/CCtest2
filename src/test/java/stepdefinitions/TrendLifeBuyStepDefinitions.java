@@ -148,7 +148,11 @@ public class TrendLifeBuyStepDefinitions    {
     // 3. US19 ==================== MY WALLET   =======================>>>
     // 1901- Dashboard sayfasinda bulunan side bar'daki My Wallet linkinin Wallet sayfasina yönlendirdigi dogrulanmali.
 
+    @Then("User clicks My Wallet section on dashboard page")
+    public void userClicksMyWalletSectionOnDashboardPage() {
 
+
+    }
 
 
 

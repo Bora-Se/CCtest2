@@ -1,4 +1,4 @@
-   #US18 As a user, I would like to have a page where I can see the order details in order to follow the latest status of my orders.
+        #US18 As a user, I would like to have a page where I can see the order details in order to follow the latest status of my orders.
     @US18
   Feature: US1800- There should be a page where Order Details can be seen
 
@@ -11,7 +11,7 @@
         Then  User clicks My Order section on dashboard page
         Then  User verifies that the Order Details page is accessible
         Then  User closes the page
-     # 1801- My Order sayfasindaki urun boardindan Order Details butonuna tiklayinca ilgili siparisin detay sayfasina gidildigi dogrulanmali.
+        # 1801- My Order sayfasindaki urun boardindan Order Details butonuna tiklayinca ilgili siparisin detay sayfasina gidildigi dogrulanmali.
 
      @US1802
     Scenario: US_1802- Sections Test on Order Details page
@@ -58,10 +58,10 @@
        Then  User clicks My Order section on dashboard page
        Then  User verifies that the Cancel Order button on the Order Details page is available
        Then  User closes the page
-     # 1805- My Order sayfasindaki Cancel Order butonunun Cancel sekmesine yönlendirme yaptigi dogrulanmali.
+       # 1805- My Order sayfasindaki Cancel Order butonunun Cancel sekmesine yönlendirme yaptigi dogrulanmali.
 
      @US1806
-     Scenario: 1806- Functions of Cancel Order button
+    Scenario: 1806- Functions of Cancel Order button
 
        Given Open browser go to url "myUrl"
        Then  User clicks on the login link, enters "mail" and "password" and logs in.
@@ -69,10 +69,10 @@
        Then  User clicks My Order section on dashboard page
        Then  User verifies that the Reason box and Send button are available when the Cancel Order button on the Order Details page is pressed
        Then  User closes the page
-      # 1806- Cancel sekmesindeki Reason textbox'inin aktif oldugu ve send butonuna tiklaninca girilen order'in iptal edildigi dogrulanmali.
+       # 1806- Cancel sekmesindeki Reason textbox'inin aktif oldugu ve send butonuna tiklaninca girilen order'in iptal edildigi dogrulanmali.
 
      @US1807
-     Scenario: 1807- Shipping, Billing and Payment information in Order Details
+    Scenario: 1807- Shipping, Billing and Payment information in Order Details
 
        Given Open browser go to url "myUrl"
        Then  User clicks on the login link, enters "mail" and "password" and logs in.
@@ -80,4 +80,4 @@
        Then  User clicks My Order section on dashboard page
        Then  User verifies that the product has Shipping, Billing and Payment information on the Order Details page
        Then  User closes the page
-     # 1807- Order Details sayfasinda ürünle ilgili Shipping Info, Billing Info, Payment Info bilgilerine erisilebilir oldugu dogrulanmali
+       # 1807- Order Details sayfasinda ürünle ilgili Shipping Info, Billing Info, Payment Info bilgilerine erisilebilir oldugu dogrulanmali

@@ -127,6 +127,11 @@ public class TrendLifeBuyPage {
 
     // ==================== MY WALLET   =======================>>>
     // 1901- Dashboard sayfasinda bulunan side bar'daki My Wallet linkinin Wallet sayfasina yönlendirdigi dogrulanmali.
+    @FindBy(xpath = "//a[@href='https://trendlifebuy.com/wallet/customer/my-wallet-index']")
+    public WebElement myWalletLink;
+
+    @FindBy(xpath = "")   //a[text()='Cancel Order']
+    public WebElement Button;
 
 
 
@@ -136,8 +141,22 @@ public class TrendLifeBuyPage {
 
 
 
+//h4[text()='My Wallet']               myWalletTitle buraya geldigi 1901
+
+    //span[text()='Total Balance']     gorunurlugu 1902
+    //h4[text()='Running Balance']
+    //h4[text()='Pending Balance']
+
+    //span[text()='Recharge Wallet']   gorunurlugu   tiklayinca da 1903
+    //h3[text()='Recharge Amount']     gorunurlugu
+
+    //input[@id='recharge_amount'] EnterRechargeAmountBox  varoldugu 1904
+
+    //h5[text()='Cancel']    cancel butonunun goruldugu ve tiklayinca iptal ettigi
+    //h4[text()='Wallet Recharge History']
 
 
+    // url   https://trendlifebuy.com/wallet/customer/my-wallet-index
 
 
 
