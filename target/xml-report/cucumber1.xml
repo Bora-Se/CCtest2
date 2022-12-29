@@ -1,78 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="7" time="272.029">
-    <testcase classname="US1800- There should be a page where Order Details can be seen" name="US1801- Test to reach the Order Details page" time="34.027">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="33.991">
+    <testcase classname="US19 Wallet to be used in shopping and its functions" name="1907 In the Wallet Recharge History list on the My Wallet page, Date, Trx Id, Amount, Type, Payment Method, Status columns" time="33.623">
         <system-out>
             <![CDATA[Given Open browser go to url "myUrl"........................................passed
 Then User clicks on the login link, enters "mail" and "password" and logs in..passed
 Then User clicks on dashboard link..........................................passed
-Then User clicks My Order section on dashboard page.........................passed
-Then User verifies that the Order Details page is accessible................passed
-Then User closes the page...................................................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="US1800- There should be a page where Order Details can be seen" name="US_1802- Sections Test on Order Details page" time="52.228">
-        <system-out>
-            <![CDATA[Given Open browser go to url "myUrl"........................................passed
-Then User clicks on the login link, enters "mail" and "password" and logs in..passed
-Then User clicks on dashboard link..........................................passed
-Then User clicks My Order section on dashboard page.........................passed
-Then User verifies that sections on the Order Details page appear...........passed
-Then User closes the page...................................................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="US1800- There should be a page where Order Details can be seen" name="1803- Visibility of Order Details" time="31.809">
-        <system-out>
-            <![CDATA[Given Open browser go to url "myUrl"........................................passed
-Then User clicks on the login link, enters "mail" and "password" and logs in..passed
-Then User clicks on dashboard link..........................................passed
-Then User clicks My Order section on dashboard page.........................passed
-Then User verifies that sections, stages appear on the Order Details page...passed
-Then User closes the page...................................................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="US1800- There should be a page where Order Details can be seen" name="1804- Access to Order Details" time="30.22">
-        <system-out>
-            <![CDATA[Given Open browser go to url "myUrl"........................................passed
-Then User clicks on the login link, enters "mail" and "password" and logs in..passed
-Then User clicks on dashboard link..........................................passed
-Then User clicks My Order section on dashboard page.........................passed
-Then User verifies that text about the order is visible on the Order Details page.passed
-Then User closes the page...................................................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="US1800- There should be a page where Order Details can be seen" name="1805- Status of Cancel Order button" time="45.543">
-        <system-out>
-            <![CDATA[Given Open browser go to url "myUrl"........................................passed
-Then User clicks on the login link, enters "mail" and "password" and logs in..passed
-Then User clicks on dashboard link..........................................passed
-Then User clicks My Order section on dashboard page.........................passed
-Then User verifies that the Cancel Order button on the Order Details page is available.passed
-Then User closes the page...................................................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="US1800- There should be a page where Order Details can be seen" name="1806- Functions of Cancel Order button" time="28.712">
-        <system-out>
-            <![CDATA[Given Open browser go to url "myUrl"........................................passed
-Then User clicks on the login link, enters "mail" and "password" and logs in..passed
-Then User clicks on dashboard link..........................................passed
-Then User clicks My Order section on dashboard page.........................passed
-Then User verifies that the Reason box and Send button are available when the Cancel Order button on the Order Details page is pressed.passed
-Then User closes the page...................................................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="US1800- There should be a page where Order Details can be seen" name="1807- Shipping, Billing and Payment information in Order Details" time="48.827">
-        <system-out>
-            <![CDATA[Given Open browser go to url "myUrl"........................................passed
-Then User clicks on the login link, enters "mail" and "password" and logs in..passed
-Then User clicks on dashboard link..........................................passed
-Then User clicks My Order section on dashboard page.........................passed
-Then User verifies that the product has Shipping, Billing and Payment information on the Order Details page.passed
+Then User clicks My Wallet section on dashboard page........................passed
+Then User verifies that they have corresponding columns in the Wallet Upload History list on the My Wallet page.passed
 Then User closes the page...................................................passed
 ]]>
         </system-out>

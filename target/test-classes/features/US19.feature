@@ -84,14 +84,9 @@
     @US1908
     Scenario: 1908 Wallet transactions listed in Wallet Recharge History on My Wallet
 
-      Given Open browser go to url "myUrl"
-      Then  User clicks on the login link, enters "mail" and "password" and logs in.
-      Then  User clicks on dashboard link
-      Then  User clicks My Wallet section on dashboard page
-      Then  xxx
-      Then  User closes the page
 
-      # My Wallet sayfasinda Wallet Recharge History listesinde Cüzdan hareketlerinin varligi dogrulanmali
+
+      My Wallet sayfasinda Wallet Recharge History listesinde Cüzdan hareketlerinin varligi dogrulanmali
 
 
 

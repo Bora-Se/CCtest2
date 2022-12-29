@@ -129,19 +129,47 @@ public class TrendLifeBuyPage {
     // 1901- Dashboard sayfasinda bulunan side bar'daki My Wallet linkinin Wallet sayfasina yönlendirdigi dogrulanmali.
     @FindBy(xpath = "//a[@href='https://trendlifebuy.com/wallet/customer/my-wallet-index']")
     public WebElement myWalletLink;
+    @FindBy(xpath = "//h4[text()='My Wallet']")
+    public WebElement myWalletTitle;
 
-    @FindBy(xpath = "")   //a[text()='Cancel Order']
-    public WebElement Button;
+    @FindBy(xpath = "//span[text()='Total Balance']")
+    public WebElement myWalletTotalBalance;
+    @FindBy(xpath = "//h4[text()='Running Balance']")
+    public WebElement myWalletRunningBalance;
+    @FindBy(xpath = "//h4[text()='Pending Balance']")
+    public WebElement myWalletPendingBalance;
+    @FindBy(xpath = "//span[text()='Recharge Wallet']")
+    public WebElement myWalletRechargeWallet;
+    @FindBy(xpath = "//h3[text()='Recharge Amount']")
+    public WebElement rechargeWalletRechargeAmountTab;
+    @FindBy(xpath = "//input[@id='recharge_amount']")
+    public WebElement enterRechargeAmountBox;
+    @FindBy(xpath = "//h5[text()='Cancel']")
+    public WebElement cancelButtonAmountBox;
+    @FindBy(xpath = "//button[text()='Add Fund']")
+    public WebElement addFundButton;
+    @FindBy(xpath = "//h4[text()='My wallet recharge']")
+    public WebElement myWalletRechargeTitle;
+
+    @FindBy(xpath = "//div[@class='dashboard_white_box_body']")
+    public WebElement sutunWalletRechargeHistoryTitle;
 
 
 
 
 
+    //1907 Tablonun get title i icerir mi? //div[@class='dashboard_white_box_body']
+    // th[text()='Date'] Date   Trx Id   Amount  Type Payment Method Status //th[text()='Date']
 
 
+    //1906
+    // enterRechargeAmountBox'a 150 yazdiralim ve ADD FUND buttonuna basalim, My wallet recharge Title isDisplayed diyebiliriz
+    // ADD FUND buttonu  //button[text()='Add Fund']
+    //1906 https://trendlifebuy.com/wallet/my-wallet-create
+    // //h4[text()='My wallet recharge']  My wallet recharge Title isDisplayed diyebiliriz
+    //
 
-
-//h4[text()='My Wallet']               myWalletTitle buraya geldigi 1901
+  /* tiklayinca --->     myWalletTitle buraya geldigi 1901
 
     //span[text()='Total Balance']     gorunurlugu 1902
     //h4[text()='Running Balance']
@@ -157,6 +185,8 @@ public class TrendLifeBuyPage {
 
 
     // url   https://trendlifebuy.com/wallet/customer/my-wallet-index
+
+   */
 
 
 
@@ -178,7 +208,6 @@ public class TrendLifeBuyPage {
 
     @FindBy(xpath = "//span[text()='These credentials do not match our records.']")
     public WebElement systemMessage;
-
 
 }
 

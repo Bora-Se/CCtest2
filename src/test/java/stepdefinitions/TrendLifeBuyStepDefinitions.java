@@ -26,7 +26,7 @@ public class TrendLifeBuyStepDefinitions    {
     }
     @Then("User clicks on the login link, enters {string} and {string} and logs in.")
     public void user_clicks_on_the_login_link_enters_and_and_logs_in(String mail, String password) {
-        ReusableMethods.bekle(2);
+
         life.loginLink.click();
         ReusableMethods.bekle(2);
         life.emailBox.sendKeys(ConfigReader.getProperty(mail));
@@ -147,15 +147,122 @@ public class TrendLifeBuyStepDefinitions    {
 
     // 3. US19 ==================== MY WALLET   =======================>>>
     // 1901- Dashboard sayfasinda bulunan side bar'daki My Wallet linkinin Wallet sayfasina yönlendirdigi dogrulanmali.
-
     @Then("User clicks My Wallet section on dashboard page")
     public void userClicksMyWalletSectionOnDashboardPage() {
+        life.myWalletLink.click();
+        ReusableMethods.bekle(2);
+    }
+    @Then("User verifies that the My Wallet link in the sidebar on the Dashboard page is accessible")
+    public void userVerifiesThatTheMyWalletLinkInTheSidebarOnTheDashboardPageIsAccessible() {
+        Assert.assertTrue(life.myWalletTitle.isDisplayed());
+    }
+    //1902-My Wallet sayfasinda Total Balance, Running Balance, Pending Balance boardlarinin görünür oldugu dogrulanmali.
+    @Then("User verifies that balance statuses appear on My Wallet page")
+    public void userVerifiesThatBalanceStatusesAppearOnMyWalletPage() {
+        actions.sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).perform();
+        Assert.assertTrue(life.myWalletTotalBalance.isDisplayed());
+        Assert.assertTrue(life.myWalletRunningBalance.isDisplayed());
+        Assert.assertTrue(life.myWalletPendingBalance.isDisplayed());
+    }
+        //1903- My Wallet sayfasinda Recharge Wallet butonunun görünür oldugu ve Recharge Amount sekmesine yönlendirdigi dogrulanmali.
+    @Then("User verifies that the Top Up My Wallet button appears and works on the My Wallet page")
+    public void userVerifiesThatTheTopUpMyWalletButtonAppearsAndWorksOnTheMyWalletPage() {
+        actions.sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).perform();
+        actions.sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).perform();
+        ReusableMethods.bekle(2);
 
+        Assert.assertTrue(life.myWalletRechargeWallet.isDisplayed());
+        life.myWalletRechargeWallet.click();
+
+        ReusableMethods.bekle(2);
+        Assert.assertTrue(life.rechargeWalletRechargeAmountTab.isDisplayed());
+    }
+        //1904- Recharge Amount sekmesinde tutar girebilebilen bir TextBox'in oldugu dogrulanmali
+    @Then("User verifies that there is a TextBox where the amount can be entered in the Recharge Amount tab")
+    public void userVerifiesThatThereIsATextBoxWhereTheAmountCanBeEnteredInTheRechargeAmountTab() {
+        actions.sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).perform();
+        actions.sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).perform();
+        ReusableMethods.bekle(2);
+
+        life.myWalletRechargeWallet.click();
+        ReusableMethods.bekle(2);
+
+        Assert.assertTrue(life.enterRechargeAmountBox.isDisplayed());
+    }
+    //1905
+    @Then("User verifies that the Cancel button on the Recharge Amount tab is visible and working, to cancel the operation")
+    public void userVerifiesThatTheCancelButtonOnTheRechargeAmountTabIsVisibleAndWorkingToCancelTheOperation() {
+        actions.sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).perform();
+        actions.sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).perform();
+        ReusableMethods.bekle(2);
+
+        life.myWalletRechargeWallet.click();
+        ReusableMethods.bekle(2);
+
+        Assert.assertTrue(life.cancelButtonAmountBox.isDisplayed());
+        ReusableMethods.bekle(2);
+
+        life.cancelButtonAmountBox.click();
+        ReusableMethods.bekle(2);
+
+        Assert.assertFalse(life.cancelButtonAmountBox.isDisplayed());
+    }
+    //1906
+    @Then("User verifies that the Add Fund button in the Recharge Amount tab is visible and working")
+    public void userVerifiesThatTheAddFundButtonInTheRechargeAmountTabIsVisibleAndWorking() {
+
+        actions.sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).perform();
+        actions.sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).perform();
+        ReusableMethods.bekle(2);
+
+        life.myWalletRechargeWallet.click();
+        ReusableMethods.bekle(2);
+
+        Assert.assertTrue(life.addFundButton.isDisplayed());
+        ReusableMethods.bekle(2);
+
+        life.enterRechargeAmountBox.sendKeys("150");
+
+        life.addFundButton.click();
+        ReusableMethods.bekle(2);
+
+        Assert.assertTrue(life.myWalletRechargeTitle.isDisplayed());
+
+    }
+    //1907- My Wallet sayfasinda Wallet Recharge History listesinde Date, Trx Id, Amount, Type, Payment Method, Status
+    // sütunlarinin oldugu dogrulanmali
+    @Then("User verifies that they have corresponding columns in the Wallet Upload History list on the My Wallet page")
+    public void userVerifiesThatTheyHaveCorrespondingColumnsInTheWalletUploadHistoryListOnTheMyWalletPage() {
+        actions.sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).perform();
+        ReusableMethods.bekle(3);
+
+        Assert.assertTrue(life.sutunWalletRechargeHistoryTitle.getText().contains("Date"));
+        Assert.assertTrue(life.sutunWalletRechargeHistoryTitle.getText().contains("Trx Id"));
+        Assert.assertTrue(life.sutunWalletRechargeHistoryTitle.getText().contains("Amount"));
+        Assert.assertTrue(life.sutunWalletRechargeHistoryTitle.getText().contains("Type"));
+        Assert.assertTrue(life.sutunWalletRechargeHistoryTitle.getText().contains("Payment Method"));
+        Assert.assertTrue(life.sutunWalletRechargeHistoryTitle.getText().contains("Status"));
+
+
+        //String expData="Date, Trx Id, Amount, Type, Payment Method, Status";
+        //Assert.assertTrue(life.sutunWalletRechargeHistoryTitle.getText().contains(expData));
+
+
+        // Date   Trx Id   Amount  Type Payment Method Status
 
     }
 
 
 
+
+
+
+
+
+
+
+
+            // ========================== ESKILER  ====================
     @Then("User clicks My Account section on dashbord page")
     public void user_clicks_my_account_section_on_dashbord_page() {
         actions.sendKeys(Keys.PAGE_DOWN).perform();
@@ -195,19 +302,11 @@ public class TrendLifeBuyStepDefinitions    {
         String actual= Driver.getDriver().getCurrentUrl();
 
         Assert.assertEquals(expected,actual);
-
     }
-
     @Then("User verifies that \\(These credentials do not match our records.) message appears in the corner")
     public void userVerifiesThatTheseCredentialsDoNotMatchOurRecordsMessageAppearsInTheCorner() {
         Assert.assertTrue(life.systemMessage.isDisplayed());
     }
-
-
-
-
-
-
     @Then("User closes the page")
     public void userClosesThePage() {
         Driver.closeDriver();
@@ -216,3 +315,7 @@ public class TrendLifeBuyStepDefinitions    {
 
 
 }
+
+
+
+
