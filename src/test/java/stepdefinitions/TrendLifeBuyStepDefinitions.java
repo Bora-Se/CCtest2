@@ -17,6 +17,7 @@ public class TrendLifeBuyStepDefinitions    {
     TrendLifeBuyPage life=new TrendLifeBuyPage();
     Actions actions=new Actions(Driver.getDriver());
 
+    // 1. ==================== LOGIN----> DASHBOARD   =======================>>>
     @Given("Open browser go to url {string}")
     public void open_browser_go_to_url(String url) {
         Driver.getDriver().get(ConfigReader.getProperty(url)); // Bu dinamik olan
@@ -42,8 +43,10 @@ public class TrendLifeBuyStepDefinitions    {
         ReusableMethods.bekle(3);
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         ReusableMethods.bekle(3);
-
     }
+
+    // 2. US18 ==================== MY ORDER   =======================>>>
+    // 1801- My Order sayfasindaki urun boardindan Order Details butonuna tiklayinca ilgili siparisin detay sayfasina gidildigi dogrulanmali.
 
     @Then("User clicks My Order section on dashboard page")
     public void userClicksMyOrderSectionOnDashboardPage() {
@@ -140,9 +143,10 @@ public class TrendLifeBuyStepDefinitions    {
         Assert.assertTrue(life.detailsShippingInfo.isDisplayed());
         Assert.assertTrue(life.detailsBillingInfo.isDisplayed());
         Assert.assertTrue(life.detailsPaymentInfo.isDisplayed());
-
-
     }
+
+    // 3. US19 ==================== MY WALLET   =======================>>>
+    // 1901- Dashboard sayfasinda bulunan side bar'daki My Wallet linkinin Wallet sayfasina yönlendirdigi dogrulanmali.
 
 
 

@@ -11,6 +11,7 @@ public class TrendLifeBuyPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+    // ==================== LOGIN ---->> DASHBOARD   =======================>>>
     @FindBy(xpath = "(//a[text()='Login'])[1]")
     public WebElement loginLink;
 
@@ -27,8 +28,9 @@ public class TrendLifeBuyPage {
     public WebElement dashboardLink;
 
     // ==================== MY ORDER   =======================>>>
+    // 1801- My Order sayfasindaki urun boardindan Order Details butonuna tiklayinca ilgili siparisin detay sayfasina gidildigi dogrulanmali.
     @FindBy(xpath = "(//a[@href='https://trendlifebuy.com/my-purchase-orders'])[1]")
-    public WebElement myOrderLink; //a[@class='position-relative d-flex align-items-center active']
+    public WebElement myOrderLink; //a[@class='position-relative d-flex align-items-center active']--HATALI
 
     @FindBy(xpath = "(//a[text()='Order Details'])[2]")   //a[text()='Cancel Order']  //a[text()='Order Details']
     public WebElement orderDetailsButton; //a[text()='Order Details']
@@ -38,6 +40,19 @@ public class TrendLifeBuyPage {
 
     @FindBy(xpath = "//div[@class='dashboard_white_box_body dashboard_orderDetails_body']")
     private WebElement orderDetailsBody;
+
+    //String requestData=life.orderDetailsBody.getText();
+    public void orderAssert(){
+
+        Assert.assertTrue(orderDetailsBody.getText().contains("Order ID"));
+        Assert.assertTrue(orderDetailsBody.getText().contains("Status"));
+        Assert.assertTrue(orderDetailsBody.getText().contains("Order date"));
+        Assert.assertTrue(orderDetailsBody.getText().contains("Order Amount"));
+        Assert.assertTrue(orderDetailsBody.getText().contains("Package"));
+        Assert.assertTrue(orderDetailsBody.getText().contains("Price"));
+        Assert.assertTrue(orderDetailsBody.getText().contains("Est arrival date"));
+        Assert.assertTrue(orderDetailsBody.getText().contains("TAX Amount"));
+    }
 
     // 1802- Order ID, Status, Order date, Order Amount, Package, Price, Est arrival date, TAX Amount information is displayed.
     @FindBy(xpath = "//h4[text()='Order ID:  ']")       //(//h4[text()='Order ID: '])[1] hatali
@@ -59,7 +74,6 @@ public class TrendLifeBuyPage {
 
     // 1803- Order Details sayfasinda ilgili siparis süreci ile ilgili;
     // Pending, Processing, Shipped, Recieved, Delivered asamalari görünür oldugu dogrulanmali.
-
     @FindBy(xpath = "//h5[text()='Pending']")
     public WebElement detailsPending;
     @FindBy(xpath = "//h5[text()='Processing']")
@@ -111,6 +125,22 @@ public class TrendLifeBuyPage {
     public WebElement detailsPaymentInfo;
 
 
+    // ==================== MY WALLET   =======================>>>
+    // 1901- Dashboard sayfasinda bulunan side bar'daki My Wallet linkinin Wallet sayfasina yönlendirdigi dogrulanmali.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -130,21 +160,6 @@ public class TrendLifeBuyPage {
     @FindBy(xpath = "//span[text()='These credentials do not match our records.']")
     public WebElement systemMessage;
 
-
-
-
-    //String requestData=life.orderDetailsBody.getText();
-        public void orderAssert(){
-
-        Assert.assertTrue(orderDetailsBody.getText().contains("Order ID"));
-        Assert.assertTrue(orderDetailsBody.getText().contains("Status"));
-        Assert.assertTrue(orderDetailsBody.getText().contains("Order date"));
-        Assert.assertTrue(orderDetailsBody.getText().contains("Order Amount"));
-        Assert.assertTrue(orderDetailsBody.getText().contains("Package"));
-        Assert.assertTrue(orderDetailsBody.getText().contains("Price"));
-        Assert.assertTrue(orderDetailsBody.getText().contains("Est arrival date"));
-        Assert.assertTrue(orderDetailsBody.getText().contains("TAX Amount"));
-}
 
 }
 
