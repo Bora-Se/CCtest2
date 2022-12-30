@@ -4,9 +4,14 @@
     @US2001
     Scenario: 2001
 
+      Given Open browser go to url "myUrl"
+      Then  User clicks on the login link, enters "mail" and "password" and logs in.
+      Then  User clicks on dashboard link
+      Then  User clicks My Coupons section on dashboard page
+      Then  User confirms that the My Coupon page is accessible
+      Then  User closes the page
 
-
-      My Coupon sayfasinin erisilebilir oldugu dogrulanmali
+       # My Coupon sayfasinin erisilebilir oldugu dogrulanmali
     @US2002
     Scenario: 2002
 

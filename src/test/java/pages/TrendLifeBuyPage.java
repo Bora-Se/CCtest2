@@ -131,7 +131,6 @@ public class TrendLifeBuyPage {
     public WebElement myWalletLink;
     @FindBy(xpath = "//h4[text()='My Wallet']")
     public WebElement myWalletTitle;
-
     @FindBy(xpath = "//span[text()='Total Balance']")
     public WebElement myWalletTotalBalance;
     @FindBy(xpath = "//h4[text()='Running Balance']")
@@ -150,11 +149,13 @@ public class TrendLifeBuyPage {
     public WebElement addFundButton;
     @FindBy(xpath = "//h4[text()='My wallet recharge']")
     public WebElement myWalletRechargeTitle;
-
     @FindBy(xpath = "//div[@class='dashboard_white_box_body']")
     public WebElement sutunWalletRechargeHistoryTitle;
 
-
+    @FindBy(xpath = "//h4[text()='Wallet Recharge History']")
+    public WebElement walletRechargeHistoryTitle;
+    @FindBy(xpath = "(//div[@class='table-responsive'])[1]")
+    public WebElement walletRechargeHistoryTab;
 
 
 

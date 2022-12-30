@@ -88,7 +88,7 @@
       Then  User clicks on the login link, enters "mail" and "password" and logs in.
       Then  User clicks on dashboard link
       Then  User clicks My Wallet section on dashboard page
-      Then  xxx
+      Then  User verifies Wallet transactions in the Wallet Recharge History list on the My Wallet page
       Then  User closes the page
 
       # My Wallet sayfasinda Wallet Recharge History listesinde Cüzdan hareketlerinin varligi dogrulanmali

@@ -45,6 +45,44 @@ public class TrendLifeBuyStepDefinitions    {
         ReusableMethods.bekle(3);
     }
 
+    // ========================== ESKILER  ====================
+    @Then("User clicks My Account section on dashbord page")
+    public void user_clicks_my_account_section_on_dashbord_page() {
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.bekle(2);
+        life.myAccountLink.click();}
+    @Then("User verifies that the page is accessible")
+    public void user_verifies_that_the_page_is_accessible() {
+        String expected="https://trendlifebuy.com/profile";
+        String actual=Driver.getDriver().getCurrentUrl();
+        Assert.assertEquals(expected,actual);
+        //   Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("/profile"));
+    }
+    @Then("Closes the page")
+    public void closes_the_page() {
+        Driver.closeDriver();
+    }
+    @Then("Verifies that the Basic Info tab contains First Name, Last Name,Email Address, Phone Number, Date of Birth, Description,Text Box")
+    public void verifiesThatTheBasicInfoTabContainsFirstNameLastNameEmailAddressPhoneNumberDateOfBirthDescriptionTextBox() {
+        Assert.assertTrue(life.firstnameBoxMyAccount.isDisplayed());}
+    @Then("User clicks Purchase History section on dashboard page")
+    public void user_clicks_purchase_history_section_on_dashboard_page() {
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.bekle(3);
+        life.purchaseHistoryLink.click();}
+    @Then("User verifies that Purchase History page is accessible")
+    public void user_verifies_that_purchase_history_page_is_accessible() {
+        String expected="https://trendlifebuy.com/my-purchase-histories";
+        String actual= Driver.getDriver().getCurrentUrl();
+        Assert.assertEquals(expected,actual);}
+    @Then("User verifies that \\(These credentials do not match our records.) message appears in the corner")
+    public void userVerifiesThatTheseCredentialsDoNotMatchOurRecordsMessageAppearsInTheCorner() {
+        Assert.assertTrue(life.systemMessage.isDisplayed());}
+    @Then("User closes the page")
+    public void userClosesThePage() {Driver.closeDriver();}
+
+
+
     // 2. US18 ==================== MY ORDER   =======================>>>
     // 1801- My Order sayfasindaki urun boardindan Order Details butonuna tiklayinca ilgili siparisin detay sayfasina gidildigi dogrulanmali.
 
@@ -243,76 +281,33 @@ public class TrendLifeBuyStepDefinitions    {
         Assert.assertTrue(life.sutunWalletRechargeHistoryTitle.getText().contains("Payment Method"));
         Assert.assertTrue(life.sutunWalletRechargeHistoryTitle.getText().contains("Status"));
 
-
+        // String expData1="Date";
+        // String expData2="Trx Id";
         //String expData="Date, Trx Id, Amount, Type, Payment Method, Status";
-        //Assert.assertTrue(life.sutunWalletRechargeHistoryTitle.getText().contains(expData));
+        //Assert.assertTrue(life.sutunWalletRechargeHistoryTitle.getText().contains(expData1));
+        //Assert.assertTrue(life.sutunWalletRechargeHistoryTitle.getText().contains(expData2));
 
 
         // Date   Trx Id   Amount  Type Payment Method Status
+    }
+
+    @Then("User verifies Wallet transactions in the Wallet Recharge History list on the My Wallet page")
+    public void userVerifiesWalletTransactionsInTheWalletRechargeHistoryListOnTheMyWalletPage() {
+        actions.sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).
+                sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).perform();
+        Assert.assertTrue(life.walletRechargeHistoryTitle.isEnabled());
+        Assert.assertTrue(life.walletRechargeHistoryTab.isEnabled());
+        //Assert.assertTrue(life.walletRechargeHistoryTitle.getText().contains("WalletRechargeHistory"));
+        //Assert.assertTrue(life.sutunWalletRechargeHistoryTitle.getText().contains("WalletRechargeHistory"));
+    }
+    // ============================= US20- MY COUPON  ====================
+
+    @Then("User clicks My Coupons section on dashboard page")
+    public void userClicksMyCouponsSectionOnDashboardPage() {
 
     }
 
-
-
-
-
-
-
-
-
-
-
-            // ========================== ESKILER  ====================
-    @Then("User clicks My Account section on dashbord page")
-    public void user_clicks_my_account_section_on_dashbord_page() {
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
-        ReusableMethods.bekle(2);
-        life.myAccountLink.click();
-
-    }
-    @Then("User verifies that the page is accessible")
-    public void user_verifies_that_the_page_is_accessible() {
-        String expected="https://trendlifebuy.com/profile";
-        String actual=Driver.getDriver().getCurrentUrl();
-
-        Assert.assertEquals(expected,actual);
-        //   Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("/profile"));
-    }
-    @Then("Closes the page")
-    public void closes_the_page() {
-        Driver.closeDriver();
-    }
-
-    @Then("Verifies that the Basic Info tab contains First Name, Last Name,Email Address, Phone Number, Date of Birth, Description,Text Box")
-    public void verifiesThatTheBasicInfoTabContainsFirstNameLastNameEmailAddressPhoneNumberDateOfBirthDescriptionTextBox() {
-        Assert.assertTrue(life.firstnameBoxMyAccount.isDisplayed());
-
-
-    }
-    @Then("User clicks Purchase History section on dashboard page")
-    public void user_clicks_purchase_history_section_on_dashboard_page() {
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
-        ReusableMethods.bekle(3);
-        life.purchaseHistoryLink.click();
-
-    }
-    @Then("User verifies that Purchase History page is accessible")
-    public void user_verifies_that_purchase_history_page_is_accessible() {
-        String expected="https://trendlifebuy.com/my-purchase-histories";
-        String actual= Driver.getDriver().getCurrentUrl();
-
-        Assert.assertEquals(expected,actual);
-    }
-    @Then("User verifies that \\(These credentials do not match our records.) message appears in the corner")
-    public void userVerifiesThatTheseCredentialsDoNotMatchOurRecordsMessageAppearsInTheCorner() {
-        Assert.assertTrue(life.systemMessage.isDisplayed());
-    }
-    @Then("User closes the page")
-    public void userClosesThePage() {
-        Driver.closeDriver();
-    }
-
-
+  // https://trendlifebuy.com/profile/coupons      (//a[@href='https://trendlifebuy.com/profile/coupons'])[1]
 
 }
 
