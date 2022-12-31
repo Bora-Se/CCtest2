@@ -304,11 +304,37 @@ public class TrendLifeBuyStepDefinitions    {
 
     @Then("User clicks My Coupons section on dashboard page")
     public void userClicksMyCouponsSectionOnDashboardPage() {
+        life.myCouponsLink.click();
+    }
+    @Then("User confirms that the My Coupon page is accessible")
+    public void userConfirmsThatTheMyCouponPageIsAccessible() {
+        //String expCouponsLink="coupons";
+        //Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(expCouponsLink));
+        String expLink="https://trendlifebuy.com/profile/coupons";
+        Assert.assertEquals(Driver.getDriver().getCurrentUrl(),expLink);
+    }
+
+    @Then("User verifies that the coupon code can be entered in the textBox in the Add Coupons section of the My Coupon page")
+    public void userVerifiesThatTheCouponCodeCanBeEnteredInTheTextBoxInTheAddCouponsSectionOfTheMyCouponPage() {
+        Assert.assertTrue(life.addCouponsCodeBox.isDisplayed());   //????
+
+    }
+    @Then("User verifies that the coupon code can be added with the Add Coupon button on the My Coupons page")
+    public void userVerifiesThatTheCouponCodeCanBeAddedWithTheAddCouponButtonOnTheMyCouponsPage() {
+        life.addCouponsCodeBox.sendKeys("1234");
+        life.addCouponButton.click();
+        //Assert.assertFalse(life.addCouponButton.isDisplayed()); ----???? 2002
 
     }
 
-  // https://trendlifebuy.com/profile/coupons      (//a[@href='https://trendlifebuy.com/profile/coupons'])[1]
-
+    @Then("User verifies which information the Collected Coupons list is listed")
+    public void userVerifiesWhichInformationTheCollectedCouponsListIsListed() {
+        Assert.assertTrue(life.collectedCouponsValue.isDisplayed());
+        Assert.assertTrue(life.collectedCouponsName.isDisplayed());
+        Assert.assertTrue(life.collectedCouponsCode.isDisplayed());
+        Assert.assertTrue(life.collectedCouponsValidity.isDisplayed());
+        Assert.assertTrue(life.collectedCouponsAction.isDisplayed());
+    }
 }
 
 

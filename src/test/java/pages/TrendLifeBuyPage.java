@@ -27,7 +27,7 @@ public class TrendLifeBuyPage {
     @FindBy(xpath = "//a[text()='Dashboard']")
     public WebElement dashboardLink;
 
-    // ==================== MY ORDER   =======================>>>
+    // ==================== US18 MY ORDER   =======================>>>
     // 1801- My Order sayfasindaki urun boardindan Order Details butonuna tiklayinca ilgili siparisin detay sayfasina gidildigi dogrulanmali.
     @FindBy(xpath = "(//a[@href='https://trendlifebuy.com/my-purchase-orders'])[1]")
     public WebElement myOrderLink; //a[@class='position-relative d-flex align-items-center active']--HATALI
@@ -125,7 +125,7 @@ public class TrendLifeBuyPage {
     public WebElement detailsPaymentInfo;
 
 
-    // ==================== MY WALLET   =======================>>>
+    // ==================== US19 MY WALLET   =======================>>>
     // 1901- Dashboard sayfasinda bulunan side bar'daki My Wallet linkinin Wallet sayfasina yönlendirdigi dogrulanmali.
     @FindBy(xpath = "//a[@href='https://trendlifebuy.com/wallet/customer/my-wallet-index']")
     public WebElement myWalletLink;
@@ -158,6 +158,35 @@ public class TrendLifeBuyPage {
     public WebElement walletRechargeHistoryTab;
 
 
+    // ==================== US20 MY COUPONS   =======================>>>
+
+    @FindBy(xpath = "(//a[@href='https://trendlifebuy.com/profile/coupons'])[1]")
+    public WebElement myCouponsLink;
+    @FindBy(xpath = "https://trendlifebuy.com/profile/coupons")
+    public WebElement getMyCouponsLinkUrl;
+    @FindBy(xpath = "//input[@id='code']")
+    public WebElement addCouponsCodeBox;
+    @FindBy(xpath = "//button[text()='Add Coupon']")
+    public WebElement addCouponButton;
+
+    //ADD COUPON nasil calisir???
+
+    @FindBy(xpath = "//th[text()='Coupon Value']")
+    public WebElement collectedCouponsValue;
+    @FindBy(xpath = "//th[text()='Store Name']")
+    public WebElement collectedCouponsName;
+    @FindBy(xpath = "//th[text()='Coupon Code']")
+    public WebElement collectedCouponsCode;
+    @FindBy(xpath = "//th[text()='Validity']")
+    public WebElement collectedCouponsValidity;
+    @FindBy(xpath = "//th[text()='Action']")
+    public WebElement collectedCouponsAction;
+
+
+    // https://trendlifebuy.com/profile/coupons       https://trendlifebuy.com/profile/coupons
+
+    //2002
+    //   (//div[@class='table-responsive'])[1] --Collected Coupons sutunu Coupon Value, Store Name, Coupon Code, Validity, Action
 
     //1907 Tablonun get title i icerir mi? //div[@class='dashboard_white_box_body']
     // th[text()='Date'] Date   Trx Id   Amount  Type Payment Method Status //th[text()='Date']
@@ -188,13 +217,6 @@ public class TrendLifeBuyPage {
     // url   https://trendlifebuy.com/wallet/customer/my-wallet-index
 
    */
-
-
-
-
-
-
-
     @FindBy(xpath = "(//a[@href=\"https://trendlifebuy.com/profile\"])[1]")
     public WebElement myAccountLink;
 
