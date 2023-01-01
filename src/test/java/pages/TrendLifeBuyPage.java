@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilities.ConfigReader;
 import utilities.Driver;
 
 public class TrendLifeBuyPage {
@@ -181,6 +182,22 @@ public class TrendLifeBuyPage {
     public WebElement collectedCouponsValidity;
     @FindBy(xpath = "//th[text()='Action']")
     public WebElement collectedCouponsAction;
+
+    // ============== US21
+    @FindBy(xpath = "//input[@name='login']")
+    public WebElement adminEmailBox;
+
+    @FindBy(xpath = "//input[@name='password']")
+    public WebElement adminPasswordBox;
+
+    @FindBy(xpath = "//button[@id='sign_in_btn']")
+    public WebElement adminSignInButton;
+
+    public void adminLogin(String mail,String password){
+        adminEmailBox.sendKeys(ConfigReader.getProperty(mail));
+        adminPasswordBox.sendKeys(ConfigReader.getProperty(password));
+        adminSignInButton.click();
+    }
 
 
     // https://trendlifebuy.com/profile/coupons       https://trendlifebuy.com/profile/coupons

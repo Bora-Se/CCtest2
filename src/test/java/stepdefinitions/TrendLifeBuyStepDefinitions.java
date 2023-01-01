@@ -341,6 +341,17 @@ public class TrendLifeBuyStepDefinitions    {
         Assert.assertTrue(life.collectedCouponsValidity.isDisplayed());
         Assert.assertTrue(life.collectedCouponsAction.isDisplayed());
     }
+
+
+    @Then("Admin enters an {string}, a {string} and then clicks sign in link on admin page to login")
+    public void adminEntersAnAAndThenClicksSignInLinkOnAdminPageToLogin(String mail, String password) {
+        life.adminLogin(mail, password);
+    }
+    //  ==================== 4. US21  MY Refund & Dispute   =======================>>>
+
+
+    //a[@href='https://trendlifebuy.com/refund/my-refund-list']
+    // url  https://trendlifebuy.com/refund/my-refund-list
 }
 
 

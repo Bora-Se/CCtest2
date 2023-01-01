@@ -7,7 +7,7 @@
       Given Open browser go to url "userUrl"
       Then  User clicks on the login link, enters "boramail" and "password" and logs in.
       Then  User clicks on dashboard link
-      Then  User clicks My section on dashboard page
+      Then  User clicks Refund & Dispute section on dashboard page
       Then  User
       Then  User closes the page
          # Refund & Dispute sayfasinin erisilebilir oldugu dogrulanmali
@@ -18,7 +18,7 @@
       Given Open browser go to url "userUrl"
       Then  User clicks on the login link, enters "boramail" and "password" and logs in.
       Then  User clicks on dashboard link
-      Then  UUser clicks My section on dashboard page
+      Then  User clicks Refund & Dispute section on dashboard page
       Then  User
       Then  User closes the page
          # Acilan sayfada Refund List'te iade islemi baslatilan ürünlerin görüntülendigi dogrulanmali
@@ -29,7 +29,7 @@
       Given Open browser go to url "userUrl"
       Then  User clicks on the login link, enters "boramail" and "password" and logs in.
       Then  User clicks on dashboard link
-      Then  User clicks My section on dashboard page
+      Then  User clicks Refund & Dispute section on dashboard page
       Then  User
       Then  User closes the page
          # Refund List'te Order ID, Order Date, Status, Request Sent Date, Order Amount, Refund Method ve Shipping Method bilgilerinin görünür oldugu dogrulanmali
@@ -40,7 +40,7 @@
       Given Open browser go to url "userUrl"
       Then  User clicks on the login link, enters "boramail" and "password" and logs in.
       Then  User clicks on dashboard link
-      Then  User clicks My section on dashboard page
+      Then  User clicks Refund & Dispute section on dashboard page
       Then  User
       Then  User closes the page
          # View Details butonu ile acilan details sayfasinda iade istemi acilan siparisin güncel durumunun görüntülenebildigi dogrulanmali
@@ -51,7 +51,7 @@
       Given Open browser go to url "userUrl"
       Then  User clicks on the login link, enters "boramail" and "password" and logs in.
       Then  User clicks on dashboard link
-      Then  User clicks My section on dashboard page
+      Then  User clicks Refund & Dispute section on dashboard page
       Then  User
       Then  User closes the page
          # Acilan details sayfada Start, Processing ve Complete durumlarindan en az birinin aktif oldugu dogrulanmali
@@ -62,7 +62,7 @@
       Given Open browser go to url "userUrl"
       Then  User clicks on the login link, enters "boramail" and "password" and logs in.
       Then  User clicks on dashboard link
-      Then  User clicks My section on dashboard page
+      Then  User clicks Refund & Dispute section on dashboard page
       Then  User
       Then  User closes the page
          # Acilan details sayfada Start, Processing ve Complete durumlarinin aciklamalarini iceren Text'lerin görünür oldugu dogrulanmali
@@ -73,7 +73,7 @@
       Given Open browser go to url "userUrl"
       Then  User clicks on the login link, enters "boramail" and "password" and logs in.
       Then  User clicks on dashboard link
-      Then  User clicks My section on dashboard page
+      Then  User clicks Refund & Dispute section on dashboard page
       Then  User
       Then  User closes the page
          # Acilan details sayfasinda Pick Up Info bilgilerinin görüntülendigi dogrulanmali
