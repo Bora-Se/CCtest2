@@ -83,7 +83,7 @@ public class TrendLifeBuyStepDefinitions    {
 
 
 
-    // 2. US18 ==================== MY ORDER   =======================>>>
+    // 2. US18 ==================== MY ORDER   DIKKAT__ 2. URUNE GORE LOCATE LERI ALDIM   =================>>>
     // 1801- My Order sayfasindaki urun boardindan Order Details butonuna tiklayinca ilgili siparisin detay sayfasina gidildigi dogrulanmali.
 
     @Then("User clicks My Order section on dashboard page")
@@ -310,19 +310,25 @@ public class TrendLifeBuyStepDefinitions    {
     public void userConfirmsThatTheMyCouponPageIsAccessible() {
         //String expCouponsLink="coupons";
         //Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(expCouponsLink));
-        String expLink="https://trendlifebuy.com/profile/coupons";
-        Assert.assertEquals(Driver.getDriver().getCurrentUrl(),expLink);
+        String expectedLink="https://trendlifebuy.com/profile/coupons";
+        String actualLink=Driver.getDriver().getCurrentUrl();
+        Assert.assertEquals(actualLink,expectedLink);
     }
 
     @Then("User verifies that the coupon code can be entered in the textBox in the Add Coupons section of the My Coupon page")
     public void userVerifiesThatTheCouponCodeCanBeEnteredInTheTextBoxInTheAddCouponsSectionOfTheMyCouponPage() {
+        life.addCouponsCodeBox.sendKeys("GÖRDUN mu? addCouponsCodeBox kutusu calisiyor");
+        ReusableMethods.bekle(5);
         Assert.assertTrue(life.addCouponsCodeBox.isDisplayed());   //????
 
     }
     @Then("User verifies that the coupon code can be added with the Add Coupon button on the My Coupons page")
     public void userVerifiesThatTheCouponCodeCanBeAddedWithTheAddCouponButtonOnTheMyCouponsPage() {
-        life.addCouponsCodeBox.sendKeys("1234");
+        life.addCouponsCodeBox.sendKeys("CODE ler tek kullanimlik, NAAPCEEEZ?  Methods ile cagirmaa???"); // Code 123123123  ama kullaninca code nin isi bitiyor, tek seferlik
+        ReusableMethods.bekle(5);
+        Assert.assertTrue(life.addCouponButton.isDisplayed());
         life.addCouponButton.click();
+        ReusableMethods.bekle(5);
         //Assert.assertFalse(life.addCouponButton.isDisplayed()); ----???? 2002
 
     }

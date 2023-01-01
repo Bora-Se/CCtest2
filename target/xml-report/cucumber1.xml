@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="30.793">
-    <testcase classname="US20" name="2003" time="30.348">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="37.226">
+    <testcase classname="US19 Wallet to be used in shopping and its functions" name="1905 Cancel button in Recharge Amount tab" time="36.844">
         <system-out>
-            <![CDATA[Given Open browser go to url "myUrl"........................................passed
-Then User clicks on the login link, enters "mail" and "password" and logs in..passed
+            <![CDATA[Given Open browser go to url "userUrl"......................................passed
+Then User clicks on the login link, enters "boramail" and "password" and logs in..passed
 Then User clicks on dashboard link..........................................passed
-Then User clicks My Coupons section on dashboard page.......................passed
-Then User verifies that the coupon code can be added with the Add Coupon button on the My Coupons page.passed
+Then User clicks My Wallet section on dashboard page........................passed
+Then User verifies that the Cancel button on the Recharge Amount tab is visible and working, to cancel the operation.passed
 Then User closes the page...................................................passed
 ]]>
         </system-out>

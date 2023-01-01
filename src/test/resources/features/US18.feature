@@ -5,8 +5,8 @@
      @US1801
     Scenario: US1801- Test to reach the Order Details page
 
-        Given Open browser go to url "myUrl"
-        Then  User clicks on the login link, enters "mail" and "password" and logs in.
+        Given Open browser go to url "userUrl"
+        Then  User clicks on the login link, enters "boramail" and "password" and logs in.
         Then  User clicks on dashboard link
         Then  User clicks My Order section on dashboard page
         Then  User verifies that the Order Details page is accessible
@@ -16,8 +16,8 @@
      @US1802
     Scenario: US_1802- Sections Test on Order Details page
 
-        Given Open browser go to url "myUrl"
-        Then  User clicks on the login link, enters "mail" and "password" and logs in.
+        Given Open browser go to url "userUrl"
+        Then  User clicks on the login link, enters "boramail" and "password" and logs in.
         Then  User clicks on dashboard link
         Then  User clicks My Order section on dashboard page
         Then  User verifies that sections on the Order Details page appear
@@ -28,8 +28,8 @@
      @US1803
     Scenario: 1803- Visibility of Order Details
 
-        Given Open browser go to url "myUrl"
-        Then  User clicks on the login link, enters "mail" and "password" and logs in.
+        Given Open browser go to url "userUrl"
+        Then  User clicks on the login link, enters "boramail" and "password" and logs in.
         Then  User clicks on dashboard link
         Then  User clicks My Order section on dashboard page
         Then  User verifies that sections, stages appear on the Order Details page
@@ -40,8 +40,8 @@
      @US1804
     Scenario: 1804- Access to Order Details
 
-        Given Open browser go to url "myUrl"
-        Then  User clicks on the login link, enters "mail" and "password" and logs in.
+        Given Open browser go to url "userUrl"
+        Then  User clicks on the login link, enters "boramail" and "password" and logs in.
         Then  User clicks on dashboard link
         Then  User clicks My Order section on dashboard page
         Then  User verifies that text about the order is visible on the Order Details page
@@ -52,8 +52,8 @@
      @US1805
     Scenario: 1805- Status of Cancel Order button
 
-       Given Open browser go to url "myUrl"
-       Then  User clicks on the login link, enters "mail" and "password" and logs in.
+       Given Open browser go to url "userUrl"
+       Then  User clicks on the login link, enters "boramail" and "password" and logs in.
        Then  User clicks on dashboard link
        Then  User clicks My Order section on dashboard page
        Then  User verifies that the Cancel Order button on the Order Details page is available
@@ -63,8 +63,8 @@
      @US1806
     Scenario: 1806- Functions of Cancel Order button
 
-       Given Open browser go to url "myUrl"
-       Then  User clicks on the login link, enters "mail" and "password" and logs in.
+       Given Open browser go to url "userUrl"
+       Then  User clicks on the login link, enters "boramail" and "password" and logs in.
        Then  User clicks on dashboard link
        Then  User clicks My Order section on dashboard page
        Then  User verifies that the Reason box and Send button are available when the Cancel Order button on the Order Details page is pressed
@@ -74,8 +74,8 @@
      @US1807
     Scenario: 1807- Shipping, Billing and Payment information in Order Details
 
-       Given Open browser go to url "myUrl"
-       Then  User clicks on the login link, enters "mail" and "password" and logs in.
+       Given Open browser go to url "userUrl"
+       Then  User clicks on the login link, enters "boramail" and "password" and logs in.
        Then  User clicks on dashboard link
        Then  User clicks My Order section on dashboard page
        Then  User verifies that the product has Shipping, Billing and Payment information on the Order Details page
