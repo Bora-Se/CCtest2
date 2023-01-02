@@ -22,34 +22,33 @@ public class TrendLifeBuyStepDefinitions    {
     public void open_browser_go_to_url(String url) {
         Driver.getDriver().get(ConfigReader.getProperty(url)); // Bu dinamik olan
         //  Driver.getDriver().get(ConfigReader.getProperty("myUrl2"));
-        ReusableMethods.bekle(2);
+        //ReusableMethods.bekle(1);
     }
     @Then("User clicks on the login link, enters {string} and {string} and logs in.")
     public void user_clicks_on_the_login_link_enters_and_and_logs_in(String mail, String password) {
 
         life.loginLink.click();
-        ReusableMethods.bekle(2);
+        //ReusableMethods.bekle(2);
         life.emailBox.sendKeys(ConfigReader.getProperty(mail));
         // life.emailBox.sendKeys(mail);
         life.passwordBox.sendKeys(ConfigReader.getProperty(password));
         //   life.passwordBox.sendKeys(password);
         actions.sendKeys(Keys.PAGE_DOWN).perform();
-        ReusableMethods.bekle(2);
+        //ReusableMethods.bekle(1);
         life.signInButton.click();
     }
     @Then("User clicks on dashboard link")
     public void user_clicks_on_dashboard_link() {
         life.dashboardLink.click();
-        ReusableMethods.bekle(3);
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
-        ReusableMethods.bekle(3);
+        //ReusableMethods.bekle(1);
+
     }
 
     // ========================== ESKILER  ====================
     @Then("User clicks My Account section on dashbord page")
     public void user_clicks_my_account_section_on_dashbord_page() {
         actions.sendKeys(Keys.PAGE_DOWN).perform();
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(1);
         life.myAccountLink.click();}
     @Then("User verifies that the page is accessible")
     public void user_verifies_that_the_page_is_accessible() {
@@ -88,9 +87,11 @@ public class TrendLifeBuyStepDefinitions    {
 
     @Then("User clicks My Order section on dashboard page")
     public void userClicksMyOrderSectionOnDashboardPage() {
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.bekle(1);
         life.myOrderLink.click();
         actions.sendKeys(Keys.PAGE_DOWN).perform();
-        ReusableMethods.bekle(3);
+        ReusableMethods.bekle(2);
 
     }
 
@@ -187,6 +188,8 @@ public class TrendLifeBuyStepDefinitions    {
     // 1901- Dashboard sayfasinda bulunan side bar'daki My Wallet linkinin Wallet sayfasina yönlendirdigi dogrulanmali.
     @Then("User clicks My Wallet section on dashboard page")
     public void userClicksMyWalletSectionOnDashboardPage() {
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.bekle(3);
         life.myWalletLink.click();
         ReusableMethods.bekle(2);
     }
@@ -304,6 +307,8 @@ public class TrendLifeBuyStepDefinitions    {
 
     @Then("User clicks My Coupons section on dashboard page")
     public void userClicksMyCouponsSectionOnDashboardPage() {
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.bekle(3);
         life.myCouponsLink.click();
     }
     @Then("User confirms that the My Coupon page is accessible")

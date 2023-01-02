@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="5.203">
-    <testcase classname="Siteye Admin girisi" name="Test US21 icin" time="4.845">
-        <failure message="null value in entry: url=null" type="java.lang.NullPointerException">
-            <![CDATA[Given Open browser go to url "AdminUrl".....................................failed
-Then Admin enters an "adminMail", a "password" and then clicks sign in link on admin page to login.skipped
-
-StackTrace:
-java.lang.NullPointerException: null value in entry: url=null
-	at com.google.common.collect.CollectPreconditions.checkEntryNotNull(CollectPreconditions.java:33)
-	at com.google.common.collect.SingletonImmutableBiMap.<init>(SingletonImmutableBiMap.java:43)
-	at com.google.common.collect.ImmutableBiMap.of(ImmutableBiMap.java:81)
-	at com.google.common.collect.ImmutableMap.of(ImmutableMap.java:128)
-	at org.openqa.selenium.remote.DriverCommand.GET(DriverCommand.java:191)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:310)
-	at stepdefinitions.TrendLifeBuyStepDefinitions.open_browser_go_to_url(TrendLifeBuyStepDefinitions.java:23)
-	at ✽.Open browser go to url "AdminUrl"(file:///C:/Users/Nuray/IdeaProjects/cc2test/src/test/resources/features/US21ADmin.feature:6)
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="36.815">
+    <testcase classname="US1800- There should be a page where Order Details can be seen" name="US_1802- Sections Test on Order Details page" time="36.423">
+        <system-out>
+            <![CDATA[Given Open browser go to url "userUrl"......................................passed
+Then User clicks on the login link, enters "boramail" and "password" and logs in..passed
+Then User clicks on dashboard link..........................................passed
+Then User clicks My Order section on dashboard page.........................passed
+Then User verifies that sections on the Order Details page appear...........passed
+Then User closes the page...................................................passed
 ]]>
-        </failure>
+        </system-out>
     </testcase>
 </testsuite>

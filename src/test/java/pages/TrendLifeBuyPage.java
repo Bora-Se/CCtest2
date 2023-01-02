@@ -100,7 +100,7 @@ public class TrendLifeBuyPage {
     public WebElement detailsDeliveredText;
 
     //---- 1805- My Order sayfasindaki Cancel Order butonunun Cancel sekmesine yönlendirme yaptigi dogrulanmali.
-    @FindBy(xpath = "(//a[text()='Cancel Order'])[2]")   // Dikkat- Cancel da Send islemini 3. de yaptim
+    @FindBy(xpath = "//a[text()='Cancel Order']")   // Dikkat- Cancel da Send islemini 3. de yaptim (//a[text()='Cancel Order'])[2]
     public WebElement cancelOrderButton;
     @FindBy(xpath = "//h3[text()='Select cancel reason']")
     public WebElement selectCancelReasonTab;
