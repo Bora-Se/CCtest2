@@ -199,6 +199,9 @@ public class TrendLifeBuyPage {
         adminSignInButton.click();
     }
 
+    // ==================== US21 Refund & Dispute   =======================>>>
+    @FindBy(xpath = "//a[@href='https://trendlifebuy.com/refund/my-refund-list']")
+    public WebElement refundDisputeLink;
 
     // https://trendlifebuy.com/profile/coupons       https://trendlifebuy.com/profile/coupons
 

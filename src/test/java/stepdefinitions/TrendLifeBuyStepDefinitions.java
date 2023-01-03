@@ -17,14 +17,14 @@ public class TrendLifeBuyStepDefinitions    {
     TrendLifeBuyPage life=new TrendLifeBuyPage();
     Actions actions=new Actions(Driver.getDriver());
 
-    // 1. ==================== LOGIN----> DASHBOARD   =======================>>>
+    // ==================== 0. LOGIN----> DASHBOARD   =======================>>>
     @Given("Open browser go to url {string}")
     public void open_browser_go_to_url(String url) {
         Driver.getDriver().get(ConfigReader.getProperty(url)); // Bu dinamik olan
         //  Driver.getDriver().get(ConfigReader.getProperty("myUrl2"));
         //ReusableMethods.bekle(1);
     }
-    @Then("User clicks on the login link, enters {string} and {string} and logs in.")
+    @Then("User clicks on the login link, enters {string} and {string} and logs in")
     public void user_clicks_on_the_login_link_enters_and_and_logs_in(String mail, String password) {
 
         life.loginLink.click();
@@ -41,8 +41,9 @@ public class TrendLifeBuyStepDefinitions    {
     public void user_clicks_on_dashboard_link() {
         life.dashboardLink.click();
         //ReusableMethods.bekle(1);
-
     }
+    @Then("Closes the page")
+    public void closesThePage() {Driver.closeDriver();}
 
     // ========================== ESKILER  ====================
     @Then("User clicks My Account section on dashbord page")
@@ -77,12 +78,11 @@ public class TrendLifeBuyStepDefinitions    {
     @Then("User verifies that \\(These credentials do not match our records.) message appears in the corner")
     public void userVerifiesThatTheseCredentialsDoNotMatchOurRecordsMessageAppearsInTheCorner() {
         Assert.assertTrue(life.systemMessage.isDisplayed());}
-    @Then("User closes the page")
-    public void userClosesThePage() {Driver.closeDriver();}
 
 
 
-    // 2. US18 ==================== MY ORDER   DIKKAT__ 2. URUNE GORE LOCATE LERI ALDIM   =================>>>
+
+    // ==================== 1. US18 MY ORDER   DIKKAT__ 2. URUNE GORE LOCATE LERI ALDIM   =================>>>
     // 1801- My Order sayfasindaki urun boardindan Order Details butonuna tiklayinca ilgili siparisin detay sayfasina gidildigi dogrulanmali.
 
     @Then("User clicks My Order section on dashboard page")
@@ -184,7 +184,7 @@ public class TrendLifeBuyStepDefinitions    {
         Assert.assertTrue(life.detailsPaymentInfo.isDisplayed());
     }
 
-    // 3. US19 ==================== MY WALLET   =======================>>>
+    //  ==================== 2. US19 MY WALLET   =======================>>>
     // 1901- Dashboard sayfasinda bulunan side bar'daki My Wallet linkinin Wallet sayfasina yönlendirdigi dogrulanmali.
     @Then("User clicks My Wallet section on dashboard page")
     public void userClicksMyWalletSectionOnDashboardPage() {
@@ -201,6 +201,7 @@ public class TrendLifeBuyStepDefinitions    {
     @Then("User verifies that balance statuses appear on My Wallet page")
     public void userVerifiesThatBalanceStatusesAppearOnMyWalletPage() {
         actions.sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).perform();
+        ReusableMethods.bekle(2);
         Assert.assertTrue(life.myWalletTotalBalance.isDisplayed());
         Assert.assertTrue(life.myWalletRunningBalance.isDisplayed());
         Assert.assertTrue(life.myWalletPendingBalance.isDisplayed());
@@ -262,7 +263,7 @@ public class TrendLifeBuyStepDefinitions    {
         Assert.assertTrue(life.addFundButton.isDisplayed());
         ReusableMethods.bekle(2);
 
-        life.enterRechargeAmountBox.sendKeys("150");
+        life.enterRechargeAmountBox.sendKeys("1500");
 
         life.addFundButton.click();
         ReusableMethods.bekle(2);
@@ -275,7 +276,7 @@ public class TrendLifeBuyStepDefinitions    {
     @Then("User verifies that they have corresponding columns in the Wallet Upload History list on the My Wallet page")
     public void userVerifiesThatTheyHaveCorrespondingColumnsInTheWalletUploadHistoryListOnTheMyWalletPage() {
         actions.sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).perform();
-        ReusableMethods.bekle(3);
+        ReusableMethods.bekle(1);
 
         Assert.assertTrue(life.sutunWalletRechargeHistoryTitle.getText().contains("Date"));
         Assert.assertTrue(life.sutunWalletRechargeHistoryTitle.getText().contains("Trx Id"));
@@ -298,12 +299,13 @@ public class TrendLifeBuyStepDefinitions    {
     public void userVerifiesWalletTransactionsInTheWalletRechargeHistoryListOnTheMyWalletPage() {
         actions.sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).
                 sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).sendKeys(Keys.DOWN).perform();
+        ReusableMethods.bekle(2);
         Assert.assertTrue(life.walletRechargeHistoryTitle.isEnabled());
         Assert.assertTrue(life.walletRechargeHistoryTab.isEnabled());
         //Assert.assertTrue(life.walletRechargeHistoryTitle.getText().contains("WalletRechargeHistory"));
         //Assert.assertTrue(life.sutunWalletRechargeHistoryTitle.getText().contains("WalletRechargeHistory"));
     }
-    // ============================= US20- MY COUPON  ====================
+    // ============================= 3. US20- MY COUPON  ====================
 
     @Then("User clicks My Coupons section on dashboard page")
     public void userClicksMyCouponsSectionOnDashboardPage() {
@@ -352,11 +354,18 @@ public class TrendLifeBuyStepDefinitions    {
     public void adminEntersAnAAndThenClicksSignInLinkOnAdminPageToLogin(String mail, String password) {
         life.adminLogin(mail, password);
     }
+
     //  ==================== 4. US21  MY Refund & Dispute   =======================>>>
 
 
-    //a[@href='https://trendlifebuy.com/refund/my-refund-list']
-    // url  https://trendlifebuy.com/refund/my-refund-list
+    //a[@href='https://trendlifebuy.com/refund/my-refund-list']   // url  https://trendlifebuy.com/refund/my-refund-list
+    //https://trendlifebuy.com/refund/my-refund-list String refundSida= "my-refund-list";
+    @Then("User clicks Refund & Dispute section on dashboard page")
+    public void userClicksRefundDisputeSectionOnDashboardPage() {
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        life.refundDisputeLink.click();
+    }
+
 }
 
 
