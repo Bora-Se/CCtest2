@@ -43,7 +43,9 @@ public class TrendLifeBuyStepDefinitions    {
         //ReusableMethods.bekle(1);
     }
     @Then("Closes the page")
-    public void closesThePage() {Driver.closeDriver();}
+    public void closes_the_page() {
+        Driver.closeDriver();
+    }
 
     // ========================== ESKILER  ====================
     @Then("User clicks My Account section on dashbord page")
@@ -58,10 +60,7 @@ public class TrendLifeBuyStepDefinitions    {
         Assert.assertEquals(expected,actual);
         //   Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("/profile"));
     }
-    @Then("Closes the page")
-    public void closes_the_page() {
-        Driver.closeDriver();
-    }
+
     @Then("Verifies that the Basic Info tab contains First Name, Last Name,Email Address, Phone Number, Date of Birth, Description,Text Box")
     public void verifiesThatTheBasicInfoTabContainsFirstNameLastNameEmailAddressPhoneNumberDateOfBirthDescriptionTextBox() {
         Assert.assertTrue(life.firstnameBoxMyAccount.isDisplayed());}
@@ -325,17 +324,17 @@ public class TrendLifeBuyStepDefinitions    {
     @Then("User verifies that the coupon code can be entered in the textBox in the Add Coupons section of the My Coupon page")
     public void userVerifiesThatTheCouponCodeCanBeEnteredInTheTextBoxInTheAddCouponsSectionOfTheMyCouponPage() {
         life.addCouponsCodeBox.sendKeys("GÖRDUN mu? addCouponsCodeBox kutusu calisiyor");
-        ReusableMethods.bekle(5);
+        ReusableMethods.bekle(2);
         Assert.assertTrue(life.addCouponsCodeBox.isDisplayed());   //????
 
     }
     @Then("User verifies that the coupon code can be added with the Add Coupon button on the My Coupons page")
     public void userVerifiesThatTheCouponCodeCanBeAddedWithTheAddCouponButtonOnTheMyCouponsPage() {
         life.addCouponsCodeBox.sendKeys("CODE ler tek kullanimlik, NAAPCEEEZ?  Methods ile cagirmaa???"); // Code 123123123  ama kullaninca code nin isi bitiyor, tek seferlik
-        ReusableMethods.bekle(5);
+        ReusableMethods.bekle(2);
         Assert.assertTrue(life.addCouponButton.isDisplayed());
         life.addCouponButton.click();
-        ReusableMethods.bekle(5);
+        ReusableMethods.bekle(2);
         //Assert.assertFalse(life.addCouponButton.isDisplayed()); ----???? 2002
 
     }
@@ -359,12 +358,22 @@ public class TrendLifeBuyStepDefinitions    {
 
 
     //a[@href='https://trendlifebuy.com/refund/my-refund-list']   // url  https://trendlifebuy.com/refund/my-refund-list
-    //https://trendlifebuy.com/refund/my-refund-list String refundSida= "my-refund-list";
+    //https://trendlifebuy.com/refund/my-refund-list
     @Then("User clicks Refund & Dispute section on dashboard page")
     public void userClicksRefundDisputeSectionOnDashboardPage() {
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         life.refundDisputeLink.click();
+        ReusableMethods.bekle(2);
     }
+    @Then("User verifies that Refund & Dispute page is accessible")
+    public void userVerifiesThatRefundDisputePageIsAccessible() {
+        String expRefundSidaLink= "my-refund-list";
+        String actualSidaLink = Driver.getDriver().getCurrentUrl();
+        Assert.assertTrue(actualSidaLink.contains(expRefundSidaLink));
+    }
+
+
+
 
 }
 
