@@ -13,7 +13,6 @@ import utilities.ReusableMethods;
 import java.security.Key;
 
 public class TrendLifeBuyStepDefinitions    {
-
     TrendLifeBuyPage life=new TrendLifeBuyPage();
     Actions actions=new Actions(Driver.getDriver());
 
@@ -77,8 +76,6 @@ public class TrendLifeBuyStepDefinitions    {
     @Then("User verifies that \\(These credentials do not match our records.) message appears in the corner")
     public void userVerifiesThatTheseCredentialsDoNotMatchOurRecordsMessageAppearsInTheCorner() {
         Assert.assertTrue(life.systemMessage.isDisplayed());}
-
-
 
 
     // ==================== 1. US18 MY ORDER   DIKKAT__ 2. URUNE GORE LOCATE LERI ALDIM   =================>>>

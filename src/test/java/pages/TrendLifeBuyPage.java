@@ -125,7 +125,6 @@ public class TrendLifeBuyPage {
     @FindBy(xpath = "//h4[text()='Payment Info ']")
     public WebElement detailsPaymentInfo;
 
-
     // ==================== US19 MY WALLET   =======================>>>
     // 1901- Dashboard sayfasinda bulunan side bar'daki My Wallet linkinin Wallet sayfasina yönlendirdigi dogrulanmali.
     @FindBy(xpath = "//a[@href='https://trendlifebuy.com/wallet/customer/my-wallet-index']")
