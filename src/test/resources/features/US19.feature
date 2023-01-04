@@ -1,5 +1,4 @@
-
-@US19
+  @US19 @System Testing
   Feature: US19 Wallet to be used in shopping and its functions
     @US1901
     Scenario: 1901 My Wallet link on the Dashboard page

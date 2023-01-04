@@ -1,5 +1,5 @@
         #US18 As a user, I would like to have a page where I can see the order details in order to follow the latest status of my orders.
-    @US18
+    @US18, @Smoke
   Feature: US1800- There should be a page where Order Details can be seen
 
      @US1801
