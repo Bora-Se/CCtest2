@@ -1,46 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="4" time="108.38">
-    <testcase classname="US20 Using Coupon and Adding Test in Shopping" name="2001 Test to access My Coupon page" time="16.415">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="54.99">
+    <testcase classname="Unknown" name="Test US54 icin" time="54.547">
         <system-out>
-            <![CDATA[Given Open browser go to url "userUrl"......................................passed
-Then User clicks on the login link, enters "boramail" and "password" and logs in.passed
-Then User clicks on dashboard link..........................................passed
-Then User clicks My Coupons section on dashboard page.......................passed
-Then User confirms that the My Coupon page is accessible....................passed
-Then Closes the page........................................................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="US20 Using Coupon and Adding Test in Shopping" name="2002 TextBox test in Add Coupons section on My Coupon page" time="36.847">
-        <system-out>
-            <![CDATA[Given Open browser go to url "userUrl"......................................passed
-Then User clicks on the login link, enters "boramail" and "password" and logs in.passed
-Then User clicks on dashboard link..........................................passed
-Then User clicks My Coupons section on dashboard page.......................passed
-Then User verifies that the coupon code can be entered in the textBox in the Add Coupons section of the My Coupon page.passed
-Then Closes the page........................................................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="US20 Using Coupon and Adding Test in Shopping" name="2003 Add Coupon button and Coupon Code test" time="24.047">
-        <system-out>
-            <![CDATA[Given Open browser go to url "userUrl"......................................passed
-Then User clicks on the login link, enters "boramail" and "password" and logs in.passed
-Then User clicks on dashboard link..........................................passed
-Then User clicks My Coupons section on dashboard page.......................passed
-Then User verifies that the coupon code can be added with the Add Coupon button on the My Coupons page.passed
-Then Closes the page........................................................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="US20 Using Coupon and Adding Test in Shopping" name="2004 Title test of information on the Collected Coupons list" time="30.584">
-        <system-out>
-            <![CDATA[Given Open browser go to url "userUrl"......................................passed
-Then User clicks on the login link, enters "boramail" and "password" and logs in.passed
-Then User clicks on dashboard link..........................................passed
-Then User clicks My Coupons section on dashboard page.......................passed
-Then User verifies which information the Collected Coupons list is listed...passed
-Then Closes the page........................................................passed
+            <![CDATA[Given Open browser go to url "AdminUrl".....................................passed
+Then Admin enters an "adminBoraMail", a "password" and then clicks sign in link on admin page to login.passed
 ]]>
         </system-out>
     </testcase>

@@ -346,13 +346,7 @@ public class TrendLifeBuyStepDefinitions    {
     }
 
 
-    @Then("Admin enters an {string}, a {string} and then clicks sign in link on admin page to login")
-    public void adminEntersAnAAndThenClicksSignInLinkOnAdminPageToLogin(String mail, String password) {
-        life.adminLogin(mail, password);
-    }
-
     //  ==================== 4. US21  MY Refund & Dispute   =======================>>>
-
 
     //a[@href='https://trendlifebuy.com/refund/my-refund-list']   // url  https://trendlifebuy.com/refund/my-refund-list
     //https://trendlifebuy.com/refund/my-refund-list
@@ -370,6 +364,39 @@ public class TrendLifeBuyStepDefinitions    {
     }
 
 
+
+    @Given("Admin enters an {string}, a {string} and then clicks sign in link on admin page to login")
+    public void adminEntersAnAAndThenClicksSignInLinkOnAdminPageToLogin(String mail,String password) {
+        life.adminLogin(mail, password);
+        ReusableMethods.bekle(2);
+
+       /* actions.moveToElement(life.allActivityLogsLink).perform();
+        ReusableMethods.bekle(2);
+        life.allActivityLogsLink.click();
+        ReusableMethods.bekle(2);
+        actions.moveToElement(life.loginActivityLink).perform();
+        ReusableMethods.bekle(2);
+        life.loginActivityLink.click();
+        ReusableMethods.bekle(2);
+
+        //Assert.assertTrue(life.loginLogoutActivityTitle.isDisplayed());
+        String expLoginLogoutActivityTitle="Login - Logout Activity";
+        Assert.assertTrue(life.loginLogoutActivityTitle.getText().contains(expLoginLogoutActivityTitle));
+
+        */
+        actions.moveToElement(life.contactRequestLink).perform();
+        ReusableMethods.bekle(2);
+        life.contactRequestLink.click();
+        ReusableMethods.bekle(2);
+        actions.moveToElement(life.contactMailLink).perform();
+        ReusableMethods.bekle(2);
+        life.contactMailLink.click();
+        ReusableMethods.bekle(2);
+
+
+
+
+    }
 
 
 }

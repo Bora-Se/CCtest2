@@ -1,4 +1,4 @@
-  @US21 @Regression
+   @Regression
   Feature: US21 Refund&Dispute page and functions test
     @US2101
     Scenario: 2101 Accessibility test of Refund & Dispute page

@@ -193,14 +193,58 @@ public class TrendLifeBuyPage {
     public WebElement adminSignInButton;
 
     public void adminLogin(String mail,String password){
-        adminEmailBox.sendKeys(ConfigReader.getProperty(mail));
-        adminPasswordBox.sendKeys(ConfigReader.getProperty(password));
-        adminSignInButton.click();
+        emailBox.sendKeys(ConfigReader.getProperty(mail));
+        passwordBox.sendKeys(ConfigReader.getProperty(password));
+        signInButton.click();
     }
 
     // ==================== US21 Refund & Dispute   =======================>>>
     @FindBy(xpath = "//a[@href='https://trendlifebuy.com/refund/my-refund-list']")
     public WebElement refundDisputeLink;
+
+    // ==================== US52 All Activity Logs   =======================>>>
+    @FindBy(xpath = "//span[text()='All Activity Logs']")
+    public WebElement allActivityLogsLink;
+
+    @FindBy(xpath = "//a[@class='active ']")
+    public WebElement loginActivityLink;
+
+    @FindBy(xpath = "//h3[text()='Login - Logout Activity']")
+    public WebElement loginLogoutActivityTitle;
+
+    //5203  User, Login AT, Logout AT, IP, Agent, Description basliklari altinda listelendigi dogrulanir
+    // satir- (//tr[@role='row'])[1]  //th[text()='User']  //th[text()='Login At']  //th[text()='Logout At']
+    //  //th[text()='IP']   //th[text()='Agent']   //th[text()='Description']
+    @FindBy(xpath = "(//tr[@role='row'])[1]")
+    public WebElement loginLogoutActivityBasliklar;
+    @FindBy(xpath = "//th[text()='User']")
+    public WebElement loginLogoutActivityUser;
+    @FindBy(xpath = "//th[text()='Login At']")
+    public WebElement loginLogoutActivityLoginAt;
+    @FindBy(xpath = "//th[text()='Logout At']")
+    public WebElement loginLogoutActivityLogoutAt;
+    @FindBy(xpath = "//th[text()='IP']")
+    public WebElement loginLogoutActivityIP;
+    @FindBy(xpath = "//th[text()='Agent']")
+    public WebElement loginLogoutActivityAgent;
+    @FindBy(xpath = "//th[text()='Description']")
+    public WebElement loginLogoutActivityDescription;
+
+    // 5204- Quick Search Text Box'i ile Login - Logout Activity listesinde arama yapilabildigi dogrulanmali
+    //input[@type='search']   calistigi nasil test olur
+
+
+    // ==================== US54 Contact Request   =======================>>>
+    // 5401
+    @FindBy(xpath = "//span[text()='Contact Request']")
+    public WebElement contactRequestLink;
+
+    @FindBy(xpath = "//a[text()='Contact Mail']")
+    public WebElement contactMailLink;
+
+    //
+
+
 
     // https://trendlifebuy.com/profile/coupons       https://trendlifebuy.com/profile/coupons
 
