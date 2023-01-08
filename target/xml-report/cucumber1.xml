@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="54.99">
-    <testcase classname="Unknown" name="Test US54 icin" time="54.547">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="23.99">
+    <testcase classname="Unknown" name="Accessibility test of Contact Mail page from Contact Request tab in Content menu on Dashboard Side Bar" time="23.575">
         <system-out>
-            <![CDATA[Given Open browser go to url "AdminUrl".....................................passed
+            <![CDATA[Given Open browser go to url "adminUrl".....................................passed
 Then Admin enters an "adminBoraMail", a "password" and then clicks sign in link on admin page to login.passed
+Then Admin clicks Contact Request and contact Mail links in Dashboard.......passed
+Then Admin verifies that Contact Mail page is accessible from Contact Request tab in Dashboard.passed
+And Closes the page.........................................................passed
 ]]>
         </system-out>
     </testcase>

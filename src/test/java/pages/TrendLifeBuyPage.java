@@ -202,21 +202,27 @@ public class TrendLifeBuyPage {
     @FindBy(xpath = "//a[@href='https://trendlifebuy.com/refund/my-refund-list']")
     public WebElement refundDisputeLink;
 
+
+
     // ==================== US52 All Activity Logs   =======================>>>
     @FindBy(xpath = "//span[text()='All Activity Logs']")
-    public WebElement allActivityLogsLink;
-
-    @FindBy(xpath = "//a[@class='active ']")
+    public WebElement allActivityLogsLink;                                                                       //5201
+    @FindBy(xpath = "//a[text()='Login Activity']")   //a[@class='active ']
     public WebElement loginActivityLink;
 
     @FindBy(xpath = "//h3[text()='Login - Logout Activity']")
     public WebElement loginLogoutActivityTitle;
 
+    @FindBy(xpath = "//a[text()='Clean All']")   //div[text()='Showing 1 to 10 of 22 entries']
+    public WebElement cleanAllButton;            //div[text()='Showing 1 to 10 of 123 entries']                  //5202
+
+    @FindBy(xpath = "//a[@id='loginLogoutDataTable_next']")
+    public WebElement nextSagTus;                                                                                //5202
+
+
     //5203  User, Login AT, Logout AT, IP, Agent, Description basliklari altinda listelendigi dogrulanir
-    // satir- (//tr[@role='row'])[1]  //th[text()='User']  //th[text()='Login At']  //th[text()='Logout At']
-    //  //th[text()='IP']   //th[text()='Agent']   //th[text()='Description']
     @FindBy(xpath = "(//tr[@role='row'])[1]")
-    public WebElement loginLogoutActivityBasliklar;
+    public WebElement loginLogoutActivityBasliklar;                                                              //5203
     @FindBy(xpath = "//th[text()='User']")
     public WebElement loginLogoutActivityUser;
     @FindBy(xpath = "//th[text()='Login At']")
@@ -230,8 +236,22 @@ public class TrendLifeBuyPage {
     @FindBy(xpath = "//th[text()='Description']")
     public WebElement loginLogoutActivityDescription;
 
-    // 5204- Quick Search Text Box'i ile Login - Logout Activity listesinde arama yapilabildigi dogrulanmali
-    //input[@type='search']   calistigi nasil test olur
+    // 5204- Quick Search Text Box'i ile Login - Logout Activity listesinde arama yapilabildigi dogrulanmali--calistigi nasil test olur
+
+    @FindBy(xpath = "//input[@type='search']")
+    public WebElement quickSearchBox;                                                                          //5204
+
+    @FindBy(xpath = "//a[text()='1']")
+    public WebElement sayfa1Button;                                                                              //5205
+
+    @FindBy(xpath = "//a[text()='2']")  //div[@id='loginLogoutDataTable_info']
+    public WebElement sayfa2Button;
+
+    @FindBy(xpath = "//div[@id='loginLogoutDataTable_info']")
+    public WebElement searchBoxInfoYazisi;                                                                     //5205
+
+
+
 
 
     // ==================== US54 Contact Request   =======================>>>
@@ -242,44 +262,13 @@ public class TrendLifeBuyPage {
     @FindBy(xpath = "//a[text()='Contact Mail']")
     public WebElement contactMailLink;
 
-    //
+    @FindBy(xpath = "//h3[text()='Contact Mail List']")
+    public WebElement contactMailListTitle;
 
 
 
-    // https://trendlifebuy.com/profile/coupons       https://trendlifebuy.com/profile/coupons
-
-    //2002
-    //   (//div[@class='table-responsive'])[1] --Collected Coupons sutunu Coupon Value, Store Name, Coupon Code, Validity, Action
-
-    //1907 Tablonun get title i icerir mi? //div[@class='dashboard_white_box_body']
-    // th[text()='Date'] Date   Trx Id   Amount  Type Payment Method Status //th[text()='Date']
 
 
-    //1906
-    // enterRechargeAmountBox'a 150 yazdiralim ve ADD FUND buttonuna basalim, My wallet recharge Title isDisplayed diyebiliriz
-    // ADD FUND buttonu  //button[text()='Add Fund']
-    //1906 https://trendlifebuy.com/wallet/my-wallet-create
-    // //h4[text()='My wallet recharge']  My wallet recharge Title isDisplayed diyebiliriz
-    //
-
-  /* tiklayinca --->     myWalletTitle buraya geldigi 1901
-
-    //span[text()='Total Balance']     gorunurlugu 1902
-    //h4[text()='Running Balance']
-    //h4[text()='Pending Balance']
-
-    //span[text()='Recharge Wallet']   gorunurlugu   tiklayinca da 1903
-    //h3[text()='Recharge Amount']     gorunurlugu
-
-    //input[@id='recharge_amount'] EnterRechargeAmountBox  varoldugu 1904
-
-    //h5[text()='Cancel']    cancel butonunun goruldugu ve tiklayinca iptal ettigi
-    //h4[text()='Wallet Recharge History']
-
-
-    // url   https://trendlifebuy.com/wallet/customer/my-wallet-index
-
-   */
     @FindBy(xpath = "(//a[@href=\"https://trendlifebuy.com/profile\"])[1]")
     public WebElement myAccountLink;
 
