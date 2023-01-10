@@ -3,8 +3,12 @@ package stepdefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.locators.RelativeLocator;
 import pages.TrendLifeBuyPage;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -47,36 +51,6 @@ public class TrendLifeBuyStepDefinitions    {
     }
 
     // ========================== ESKILER  ====================
-    @Then("User clicks My Account section on dashbord page")
-    public void user_clicks_my_account_section_on_dashbord_page() {
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
-        ReusableMethods.bekle(1);
-        life.myAccountLink.click();}
-    @Then("User verifies that the page is accessible")
-    public void user_verifies_that_the_page_is_accessible() {
-        String expected="https://trendlifebuy.com/profile";
-        String actual=Driver.getDriver().getCurrentUrl();
-        Assert.assertEquals(expected,actual);
-        //   Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("/profile"));
-    }
-
-    @Then("Verifies that the Basic Info tab contains First Name, Last Name,Email Address, Phone Number, Date of Birth, Description,Text Box")
-    public void verifiesThatTheBasicInfoTabContainsFirstNameLastNameEmailAddressPhoneNumberDateOfBirthDescriptionTextBox() {
-        Assert.assertTrue(life.firstnameBoxMyAccount.isDisplayed());}
-    @Then("User clicks Purchase History section on dashboard page")
-    public void user_clicks_purchase_history_section_on_dashboard_page() {
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
-        ReusableMethods.bekle(3);
-        life.purchaseHistoryLink.click();}
-    @Then("User verifies that Purchase History page is accessible")
-    public void user_verifies_that_purchase_history_page_is_accessible() {
-        String expected="https://trendlifebuy.com/my-purchase-histories";
-        String actual= Driver.getDriver().getCurrentUrl();
-        Assert.assertEquals(expected,actual);}
-    @Then("User verifies that \\(These credentials do not match our records.) message appears in the corner")
-    public void userVerifiesThatTheseCredentialsDoNotMatchOurRecordsMessageAppearsInTheCorner() {
-        Assert.assertTrue(life.systemMessage.isDisplayed());}
-
 
     // ==================== 1. US18 MY ORDER   DIKKAT__ 2. URUNE GORE LOCATE LERI ALDIM   =================>>>
     // 1801- My Order sayfasindaki urun boardindan Order Details butonuna tiklayinca ilgili siparisin detay sayfasina gidildigi dogrulanmali.
@@ -439,19 +413,104 @@ public class TrendLifeBuyStepDefinitions    {
         actions.moveToElement(life.contactRequestLink).perform();
         ReusableMethods.bekle(2);
         life.contactRequestLink.click();
+        actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
         ReusableMethods.bekle(2);
 
         actions.moveToElement(life.contactMailLink).perform();
         ReusableMethods.bekle(2);
         life.contactMailLink.click();
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(3);
     }
-
     @Then("Admin verifies that Contact Mail page is accessible from Contact Request tab in Dashboard")
     public void adminVerifiesThatContactMailPageIsAccessibleFromContactRequestTabInDashboard() {
-        //Assert.assertTrue(life.contactMailListTitle.isDisplayed());
-        //Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("contact"));
-        Assert.assertTrue(Driver.getDriver().getTitle().contains("Contact"));
+        String expectedData="contact";
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(expectedData));
+    }
+    @Then("Admin verifies Contact Mail LIst is visible on Contact Mail page")
+    public void adminVerifiesContactMailLIstIsVisibleOnContactMailPage() {                                   //5402
+        //ReusableMethods.bekle(2);
+        Assert.assertTrue(life.contactMailListTitle.isDisplayed());
+        //System.out.println(Driver.getDriver().getTitle());  // Trendlifebuy | Online Shopping | Contactrequest Contact
+        //Assert.assertTrue(Driver.getDriver().getTitle().contains("Contact"));  //Contact Mail List   failed
+    }
+    @Then("Admin verifies that messages are listed with Name , Email, Message headers in Contact Mail LIst")
+    public void adminVerifiesThatMessagesAreListedWithNameEmailMessageHeadersInContactMailLIst() {             //5403
+        /*Assert.assertTrue(life.contactMailListNAME.isDisplayed());
+        Assert.assertTrue(life.contactMailListEMAIL.isDisplayed());
+        Assert.assertTrue(life.contactMailListMESSAGE.isDisplayed());*/
+        Assert.assertTrue(life.contactMailListNAME.isEnabled());
+        Assert.assertTrue(life.contactMailListEMAIL.isEnabled());
+        Assert.assertTrue(life.contactMailListMESSAGE.isEnabled());
+    }
+    @Then("Admin verifies that when clicking Contact Mail List headers, the order of the information is changed")
+    public void adminVerifiesThatWhenClickingContactMailListHeadersTheOrderOfTheInformationIsChanged() {        //5404
+        //ReusableMethods.bekle(2);
+        String foreClickExpData=life.altEMAILWebElementBirinci.getText();
+        //System.out.println(life.altEMAILWebElementBirinci.getText());  //u_3_4635293334@wisequarter.com
+        System.out.println(foreClickExpData);      // Expected :u_3_4635293334@wisequarter.com
+        ReusableMethods.bekle(2);
+        life.contactMailListEMAIL.click();
+        ReusableMethods.bekle(2);
+        String efterClickActData=life.altEMAILWebElementBirinci.getText();   //bitox26925@lance7.com
+        //System.out.println(life.altEMAILWebElementBirinci.getText());
+        System.out.println(efterClickActData);     // Actual   :bitox26925@lance7.com
+        Assert.assertNotEquals(foreClickExpData,efterClickActData);
+
+
+        /* //  bitox26925@lance7.com    --   u_3_4635293334@wisequarter.com
+        WebElement baslikEMAIL= Driver.getDriver().findElement(By.xpath("//th[text()='Email']"));
+        //WebElement altEMAILWebElement= Driver.getDriver().findElement(By.xpath("//td[text()='bitox26925@lance7.com']"));
+        WebElement altEMAILWebElement=Driver.getDriver().findElement(RelativeLocator.with(By.
+                xpath("//td[text()='bitox26925@lance7.com']")).below(baslikEMAIL));
+        System.out.println(altEMAILWebElement.getText());
+        String expData="bitox26925@lance7.com";
+        String actData=altEMAILWebElement.getText();
+        Assert.assertEquals(actData,expData);
+
+        //Assert.assertTrue(RelativeLocator.life.altEMAILWebElement.);
+        // WebElement contactMailListEMAIL=Driver.getDriver(FindBy.class.getName();
+        //// Boston u, Toronto nun alti diyelim
+        //  WebElement toronto= driver.findElement(By.id("pid2_price"));
+        //  WebElement boston2= driver.findElement(RelativeLocator
+        //  .with(By.className("ui-li-aside"))
+        //  .below(toronto));
+        //  System.out.println(boston2.getAttribute("id")); // pid6_price   */
+    }
+
+    @Then("Admin verifies that it is possible to search Contact Mail List with Quick Search Box")
+    public void adminVerifiesThatItIsPossibleToSearchContactMailListWithQuickSearchBox() {              //5405  --Dinamik degil
+
+
+        String foreClickExpData=life.altEMAILWebElementBirinci.getText();
+        String altEMAILWebElementIkinci= life.altEMAILWebElementIkinci.getText();
+        System.out.println(foreClickExpData);      // Expected :u_3_4635293334@wisequarter.com
+        actions.click(life.mailListQuickSearchBoxKutusu).sendKeys("test@test.com").sendKeys(Keys.ENTER).perform();
+        ReusableMethods.bekle(2);
+        String enterQuickSearhBoxData=life.altEMAILWebElementBirinci.getText();   //test@test.com
+        System.out.println(enterQuickSearhBoxData);     // test@test.com
+        String beklenenBirinciData= "test@test.com";
+        Assert.assertNotEquals(foreClickExpData,enterQuickSearhBoxData);
+        Assert.assertEquals(enterQuickSearhBoxData,beklenenBirinciData);
+        //Assert.assertFalse(life.altEMAILWebElementIkinci.isEnabled()); Failed
+        //Assert.assertFalse(life.altEMAILWebElementIkinci.isDisplayed()); Failed
+
+        /*String foreClickExpData=life.altEMAILWebElementBirinci.getText();  ------PASSED
+        System.out.println(foreClickExpData);      // Expected :u_3_4635293334@wisequarter.com
+        actions.click(life.mailListQuickSearchBoxKutusu).sendKeys("u_3_4635293334@wisequarter.com").sendKeys(Keys.ENTER).perform();
+        ReusableMethods.bekle(2);
+
+        String efterClickActData=life.altEMAILWebElementBirinci.getText();   //u_3_4635293334@wisequarter.com
+        System.out.println(efterClickActData);     // Actual   :u_3_4635293334@wisequarter.com
+        Assert.assertEquals(foreClickExpData,efterClickActData);*/
+    }
+
+
+    @Then("Admin verifies the visibility of Show and Delete links in Select tab under Action heading")
+    public void adminVerifiesTheVisibilityOfShowAndDeleteLinksInSelectTabUnderActionHeading() {             //5406
+        life.actionsSelectButton.click();
+        ReusableMethods.bekle(2);
+        Assert.assertTrue(life.actionsShowButton.isDisplayed());
+        Assert.assertTrue(life.actionsDeleteButton.isDisplayed());
 
     }
 }

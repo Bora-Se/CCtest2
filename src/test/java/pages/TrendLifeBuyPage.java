@@ -255,34 +255,46 @@ public class TrendLifeBuyPage {
 
 
     // ==================== US54 Contact Request   =======================>>>
-    // 5401
-    @FindBy(xpath = "//span[text()='Contact Request']")
+
+    @FindBy(xpath = "//span[text()='Contact Request']")   // 5401
     public WebElement contactRequestLink;
 
     @FindBy(xpath = "//a[text()='Contact Mail']")
     public WebElement contactMailLink;
 
-    @FindBy(xpath = "//h3[text()='Contact Mail List']")
+    @FindBy(xpath = "//h3[text()='Contact Mail List']")  //5402
     public WebElement contactMailListTitle;
 
+    @FindBy(xpath = "//th[text()='Name']")               //5403
+    public WebElement contactMailListNAME;
+    @FindBy(xpath = "//th[text()='Message']")
+    public WebElement contactMailListMESSAGE;
+    @FindBy(xpath = "//th[text()='Email']")
+    public WebElement contactMailListEMAIL;
+
+    @FindBy(xpath = "//td[text()='bitox26925@lance7.com']") //5404  --Kullanmadim
+    public WebElement altEMAILWebElement;
+    @FindBy(xpath = "(//td[@class='sorting_1'])[1]") //5404
+    public WebElement altEMAILWebElementBirinci;    //Basta, EMAIL in altindaki elemani verir,tiklayincada yeni gelenin textini verir
+    @FindBy(xpath = "(//td[@class='sorting_1'])[2]") //5404
+    public WebElement altEMAILWebElementIkinci;
+
+    @FindBy(xpath = "//input[@type='search']")                         //5405
+    public WebElement mailListQuickSearchBoxKutusu;
+
+    @FindBy(xpath = "(//button[@id='dropdownMenu2'])[1]")                         //5406
+    public WebElement actionsSelectButton;
+
+    @FindBy(xpath = "(//a[text()='Show'])[1]")                         //5406
+    public WebElement actionsShowButton;
+
+    @FindBy(xpath = "(//a[text()='Delete'])[1]")                         //5406
+    public WebElement actionsDeleteButton;
 
 
 
 
-    @FindBy(xpath = "(//a[@href=\"https://trendlifebuy.com/profile\"])[1]")
-    public WebElement myAccountLink;
 
-    @FindBy(xpath = "(//a[@class='position-relative d-flex align-items-center '])[2]")
-    public WebElement suppTicket;
-
-    @FindBy(xpath = "//input[@name='first_name']")
-    public WebElement firstnameBoxMyAccount;
-
-    @FindBy(xpath = "(//a[@class='position-relative d-flex align-items-center'])[1]")
-    public WebElement purchaseHistoryLink;
-
-    @FindBy(xpath = "//span[text()='These credentials do not match our records.']")
-    public WebElement systemMessage;
 
 }
 
