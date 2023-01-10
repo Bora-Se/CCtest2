@@ -288,10 +288,18 @@ public class TrendLifeBuyPage {
     @FindBy(xpath = "(//a[text()='Show'])[1]")                         //5406
     public WebElement actionsShowButton;
 
-    @FindBy(xpath = "(//a[text()='Delete'])[1]")                         //5406
+    @FindBy(xpath = "(//a[text()='Delete'])[1]")    //h3[text()='Contact Mail']                      //5406
     public WebElement actionsDeleteButton;
 
+    @FindBy(xpath = "//h3[text()='Contact Mail']")                                                    //5407
+    public WebElement contactMailDetayTitle;
 
+    @FindBy(xpath = "//input[@id='dataDeleteBtn']")                                                    //5408
+    public WebElement actionsSelectDelete2Button;
+
+    //
+    @FindBy(xpath = "//div[@id='a11y-speak-polite']")                                                    //5408
+    public WebElement delectedMessage;
 
 
 

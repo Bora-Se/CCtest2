@@ -511,6 +511,39 @@ public class TrendLifeBuyStepDefinitions    {
         ReusableMethods.bekle(2);
         Assert.assertTrue(life.actionsShowButton.isDisplayed());
         Assert.assertTrue(life.actionsDeleteButton.isDisplayed());
+    }
+
+
+    @Then("Admin verifies that clicking the Show link in the Select tab reaches the Contact Mail page")
+    public void adminVerifiesThatClickingTheShowLinkInTheSelectTabReachesTheContactMailPage() {           //5407
+        life.actionsSelectButton.click();
+        ReusableMethods.bekle(1);
+        life.actionsShowButton.click();
+        Assert.assertTrue(life.contactMailDetayTitle.isDisplayed());
+
+        String expData="contact";
+        String actData=Driver.getDriver().getCurrentUrl();
+        Assert.assertTrue(actData.contains(expData));
+
+        String expData2="Contact";
+        String actData2=life.contactMailDetayTitle.getText();
+        Assert.assertTrue(actData2.contains(expData2));
+
+
+    }
+
+    @Then("Admin verifies that the mail has been deleted with the Delete link in the Select tab under the Action title")
+    public void adminVerifiesThatTheMailHasBeenDeletedWithTheDeleteLinkInTheSelectTabUnderTheActionTitle() {    //5408
+        String foreDeleteExpData=life.altEMAILWebElementBirinci.getText();
+        life.actionsSelectButton.click();
+        ReusableMethods.bekle(1);
+        life.actionsDeleteButton.click();
+        ReusableMethods.bekle(1);
+        life.actionsSelectDelete2Button.click();
+        ReusableMethods.bekle(1);
+        String efterDeleteActData=life.altEMAILWebElementBirinci.getText();
+        Assert.assertNotEquals(foreDeleteExpData,efterDeleteActData);
+        //Assert.assertTrue(life.delectedMessage.isDisplayed());  -??
 
     }
 }
