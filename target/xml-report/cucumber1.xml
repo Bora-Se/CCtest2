@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="28.189">
-    <testcase classname="Unknown" name="Mail deletion test with Delete link in Select tab under Action title" time="27.77">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="32.046">
+    <testcase classname="Unknown" name="Mail deletion test with Delete link in Select tab under Action title" time="31.617">
         <system-out>
             <![CDATA[Given Open browser go to url "adminUrl".....................................passed
 Then Admin enters an "adminBoraMail", a "password" and then clicks sign in link on admin page to login.passed

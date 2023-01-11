@@ -47,7 +47,8 @@ public class TrendLifeBuyStepDefinitions    {
     }
     @Then("Closes the page")
     public void closes_the_page() {
-        Driver.closeDriver();
+
+        //Driver.closeDriver();
     }
 
     // ========================== ESKILER  ====================
@@ -363,14 +364,16 @@ public class TrendLifeBuyStepDefinitions    {
 
     @Then("Admin verifies that activities in Login - Logout Activity list are deleted with Celan All button")
     public void adminVerifiesThatActivitiesInLoginLogoutActivityListAreDeletedWithCelanAllButton() {            //5202
-        actions.sendKeys(Keys.END).perform();
-        ReusableMethods.bekle(2);
-        //Assert.assertTrue(life.nextSagTus.isDisplayed());
-        Assert.assertTrue(life.nextSagTus.isEnabled());
         ReusableMethods.bekle(2);
         life.cleanAllButton.click();
+        ReusableMethods.bekle(1);
+        life.dataDeleteButton2.click();
         ReusableMethods.bekle(2);
-        Assert.assertFalse(life.nextSagTus.isEnabled());
+        String expData="No data";
+        String actData=life.sonucYazisi52NoData.getText();
+        Assert.assertTrue(actData.contains(expData));
+
+
     }
     @Then("Admin verifies that the activities in the Login-Logout Activity list are the titles for which they are listed")
     public void adminVerifiesThatTheActivitiesInTheLoginLogoutActivityListAreTheTitlesForWhichTheyAreListed() { //5203
@@ -384,7 +387,7 @@ public class TrendLifeBuyStepDefinitions    {
         }
 
     @Then("Admin verifies that it is possible to search Login - Logout Activity list with Quick Search Text Box")
-    public void adminVerifiesThatItIsPossibleToSearchLoginLogoutActivityListWithQuickSearchTextBox() {
+    public void adminVerifiesThatItIsPossibleToSearchLoginLogoutActivityListWithQuickSearchTextBox() {           //5204
         ReusableMethods.bekle(3);
         //actions.sendKeys(Keys.END).perform();
         String sonucYazisi1=life.searchBoxInfoYazisi.getText();
@@ -403,8 +406,7 @@ public class TrendLifeBuyStepDefinitions    {
         life.sayfa2Button.click();
         ReusableMethods.bekle(1);
         String sonucYazisi2=life.searchBoxInfoYazisi.getText();
-        Assert.assertNotEquals(sonucYazisi1,sonucYazisi2);  //Passed
-        //Assert.assertEquals(sonucYazisi1,sonucYazisi2);       //Failed
+        Assert.assertNotEquals(sonucYazisi1,sonucYazisi2);
     }
 
     // ==================== US54 Contact Request   =======================>>>
@@ -431,16 +433,25 @@ public class TrendLifeBuyStepDefinitions    {
         //ReusableMethods.bekle(2);
         Assert.assertTrue(life.contactMailListTitle.isDisplayed());
         //System.out.println(Driver.getDriver().getTitle());  // Trendlifebuy | Online Shopping | Contactrequest Contact
-        //Assert.assertTrue(Driver.getDriver().getTitle().contains("Contact"));  //Contact Mail List   failed
+        //Assert.assertTrue(Driver.getDriver().getTitle().contains("contact"));  //Contact Mail List   failed
     }
     @Then("Admin verifies that messages are listed with Name , Email, Message headers in Contact Mail LIst")
     public void adminVerifiesThatMessagesAreListedWithNameEmailMessageHeadersInContactMailLIst() {             //5403
-        /*Assert.assertTrue(life.contactMailListNAME.isDisplayed());
+       Assert.assertTrue(life.contactMailListNAME.isDisplayed());
         Assert.assertTrue(life.contactMailListEMAIL.isDisplayed());
-        Assert.assertTrue(life.contactMailListMESSAGE.isDisplayed());*/
-        Assert.assertTrue(life.contactMailListNAME.isEnabled());
+        Assert.assertTrue(life.contactMailListMESSAGE.isDisplayed());
+
+        /*Assert.assertTrue(life.contactMailListNAME.isEnabled());  --- CALISIR
         Assert.assertTrue(life.contactMailListEMAIL.isEnabled());
-        Assert.assertTrue(life.contactMailListMESSAGE.isEnabled());
+        Assert.assertTrue(life.contactMailListMESSAGE.isEnabled()); // NAME	EMAIL	MESSAGE*/
+
+
+
+        //Assert.assertTrue(life.contactMailListTable.getText().contains("NAME")); // NAME	EMAIL	MESSAGE life.contactMailListNAME.getText()
+        //System.out.println(life.contactMailListNAME.getText());  yazmiyor?
+        //Assert.assertTrue(life.contactMailListTable.getText().contains(life.contactMailListEMAIL.getText())); // NAME	EMAIL	MESSAGE
+        //Assert.assertTrue(life.contactMailListTable.getText().contains(life.contactMailListMESSAGE.getText())); // NAME	EMAIL	MESSAGE
+
     }
     @Then("Admin verifies that when clicking Contact Mail List headers, the order of the information is changed")
     public void adminVerifiesThatWhenClickingContactMailListHeadersTheOrderOfTheInformationIsChanged() {        //5404
@@ -479,31 +490,18 @@ public class TrendLifeBuyStepDefinitions    {
 
     @Then("Admin verifies that it is possible to search Contact Mail List with Quick Search Box")
     public void adminVerifiesThatItIsPossibleToSearchContactMailListWithQuickSearchBox() {              //5405  --Dinamik degil
-
-
         String foreClickExpData=life.altEMAILWebElementBirinci.getText();
         String altEMAILWebElementIkinci= life.altEMAILWebElementIkinci.getText();
         System.out.println(foreClickExpData);      // Expected :u_3_4635293334@wisequarter.com
         actions.click(life.mailListQuickSearchBoxKutusu).sendKeys("test@test.com").sendKeys(Keys.ENTER).perform();
         ReusableMethods.bekle(2);
         String enterQuickSearhBoxData=life.altEMAILWebElementBirinci.getText();   //test@test.com
-        System.out.println(enterQuickSearhBoxData);     // test@test.com
+        //System.out.println(enterQuickSearhBoxData);     // test@test.com
         String beklenenBirinciData= "test@test.com";
         Assert.assertNotEquals(foreClickExpData,enterQuickSearhBoxData);
         Assert.assertEquals(enterQuickSearhBoxData,beklenenBirinciData);
-        //Assert.assertFalse(life.altEMAILWebElementIkinci.isEnabled()); Failed
-        //Assert.assertFalse(life.altEMAILWebElementIkinci.isDisplayed()); Failed
 
-        /*String foreClickExpData=life.altEMAILWebElementBirinci.getText();  ------PASSED
-        System.out.println(foreClickExpData);      // Expected :u_3_4635293334@wisequarter.com
-        actions.click(life.mailListQuickSearchBoxKutusu).sendKeys("u_3_4635293334@wisequarter.com").sendKeys(Keys.ENTER).perform();
-        ReusableMethods.bekle(2);
-
-        String efterClickActData=life.altEMAILWebElementBirinci.getText();   //u_3_4635293334@wisequarter.com
-        System.out.println(efterClickActData);     // Actual   :u_3_4635293334@wisequarter.com
-        Assert.assertEquals(foreClickExpData,efterClickActData);*/
     }
-
 
     @Then("Admin verifies the visibility of Show and Delete links in Select tab under Action heading")
     public void adminVerifiesTheVisibilityOfShowAndDeleteLinksInSelectTabUnderActionHeading() {             //5406
@@ -512,7 +510,6 @@ public class TrendLifeBuyStepDefinitions    {
         Assert.assertTrue(life.actionsShowButton.isDisplayed());
         Assert.assertTrue(life.actionsDeleteButton.isDisplayed());
     }
-
 
     @Then("Admin verifies that clicking the Show link in the Select tab reaches the Contact Mail page")
     public void adminVerifiesThatClickingTheShowLinkInTheSelectTabReachesTheContactMailPage() {           //5407
@@ -528,23 +525,26 @@ public class TrendLifeBuyStepDefinitions    {
         String expData2="Contact";
         String actData2=life.contactMailDetayTitle.getText();
         Assert.assertTrue(actData2.contains(expData2));
-
-
     }
 
     @Then("Admin verifies that the mail has been deleted with the Delete link in the Select tab under the Action title")
     public void adminVerifiesThatTheMailHasBeenDeletedWithTheDeleteLinkInTheSelectTabUnderTheActionTitle() {    //5408
-        String foreDeleteExpData=life.altEMAILWebElementBirinci.getText();
+        String expSonucYazisi1=life.getSonucYazisi54NoData.getText();
+
+        //String foreDeleteExpData=life.altEMAILWebElementBirinci.getText();
+
         life.actionsSelectButton.click();
         ReusableMethods.bekle(1);
         life.actionsDeleteButton.click();
         ReusableMethods.bekle(1);
         life.actionsSelectDelete2Button.click();
         ReusableMethods.bekle(1);
-        String efterDeleteActData=life.altEMAILWebElementBirinci.getText();
-        Assert.assertNotEquals(foreDeleteExpData,efterDeleteActData);
+        String actSonucYazisi2=life.getSonucYazisi54NoData.getText();
+        // Peki ikinci sayfada veriler olunca, birinci sayfadan silinen yerine hemen ikinci sayfadan veri gelirse
+        Assert.assertNotEquals(expSonucYazisi1,actSonucYazisi2);
+        //Assert.assertNotEquals(foreDeleteExpData,efterDeleteActData);   // alttaki mailde ayni olunca FAILED, message sanki uniq
         //Assert.assertTrue(life.delectedMessage.isDisplayed());  -??
-
+        //String efterDeleteActData=life.altEMAILWebElementBirinci.getText();
     }
 }
 

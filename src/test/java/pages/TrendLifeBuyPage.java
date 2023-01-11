@@ -216,9 +216,13 @@ public class TrendLifeBuyPage {
     @FindBy(xpath = "//a[text()='Clean All']")   //div[text()='Showing 1 to 10 of 22 entries']
     public WebElement cleanAllButton;            //div[text()='Showing 1 to 10 of 123 entries']                  //5202
 
+    @FindBy(xpath = "//input[@id='dataDeleteBtn']")
+    public WebElement dataDeleteButton2;  //td[text()='No data available in table']
     @FindBy(xpath = "//a[@id='loginLogoutDataTable_next']")
     public WebElement nextSagTus;                                                                                //5202
 
+    @FindBy(xpath = "//td[text()='No data available in table']")
+    public WebElement sonucYazisi52NoData;
 
     //5203  User, Login AT, Logout AT, IP, Agent, Description basliklari altinda listelendigi dogrulanir
     @FindBy(xpath = "(//tr[@role='row'])[1]")
@@ -269,8 +273,11 @@ public class TrendLifeBuyPage {
     public WebElement contactMailListNAME;
     @FindBy(xpath = "//th[text()='Message']")
     public WebElement contactMailListMESSAGE;
-    @FindBy(xpath = "//th[text()='Email']")
+    @FindBy(xpath = "//th[text()='Email']")  //tbody[1]/tr[1]/td[@class='sorting_1']
     public WebElement contactMailListEMAIL;
+    @FindBy(xpath = "//tbody[1]/tr[1]/td[@class='sorting_1']")
+    public WebElement contactMailListTable;
+
 
     @FindBy(xpath = "//td[text()='bitox26925@lance7.com']") //5404  --Kullanmadim
     public WebElement altEMAILWebElement;
@@ -301,8 +308,8 @@ public class TrendLifeBuyPage {
     @FindBy(xpath = "//div[@id='a11y-speak-polite']")                                                    //5408
     public WebElement delectedMessage;
 
-
-
+    @FindBy(xpath = "//div[@id='dataTable_info']")
+    public WebElement getSonucYazisi54NoData;
 
 }
 
