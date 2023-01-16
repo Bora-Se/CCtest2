@@ -193,8 +193,8 @@ public class TrendLifeBuyPage {
     public WebElement adminSignInButton;
 
     public void adminLogin(String mail,String password){
-        emailBox.sendKeys(ConfigReader.getProperty(mail));
-        passwordBox.sendKeys(ConfigReader.getProperty(password));
+        emailBox.sendKeys(ConfigReader.getProperty(mail)); //"adminBoraMail"
+        passwordBox.sendKeys(ConfigReader.getProperty(password)); //"password"
         signInButton.click();
     }
 

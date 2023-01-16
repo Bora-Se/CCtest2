@@ -517,6 +517,7 @@ public class TrendLifeBuyStepDefinitions    {
         life.actionsSelectButton.click();
         ReusableMethods.bekle(1);
         life.actionsShowButton.click();
+        ReusableMethods.bekle(3);
         Assert.assertTrue(life.contactMailDetayTitle.isDisplayed());
 
         String expData="contact";

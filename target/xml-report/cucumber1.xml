@@ -1,51 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="5" time="110.965">
-    <testcase classname="Visibility testing of Login/Logout activities" name="Test to access Login - Logout Activity page with Login Activity link from All Activity Logs menu" time="22.259">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="32.107">
+    <testcase classname="Unknown" name="Test to redirect to Contact Mail page when Show link is clicked in Select tab" time="31.649">
         <system-out>
             <![CDATA[Given Open browser go to url "adminUrl".....................................passed
 Then Admin enters an "adminBoraMail", a "password" and then clicks sign in link on admin page to login.passed
-Then Admin clicks All Activity Logs and Activity Logs links in Dashboard....passed
-Then Admin verifies accessing Login - Logout Activity page from All Activity Logs menu.passed
-And Closes the page.........................................................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="Visibility testing of Login/Logout activities" name="Test of deletion of activities in Login/Logout Activity list with Celan All button" time="23.14">
-        <system-out>
-            <![CDATA[Given Open browser go to url "adminUrl".....................................passed
-Then Admin enters an "adminBoraMail", a "password" and then clicks sign in link on admin page to login.passed
-Then Admin clicks All Activity Logs and Activity Logs links in Dashboard....passed
-Then Admin verifies that activities in Login - Logout Activity list are deleted with Celan All button.passed
-And Closes the page.........................................................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="Visibility testing of Login/Logout activities" name="Test for listing activities in Login/Logout Activity list with User, Login AT, Logout AT, IP, Agent, Description headers" time="19.369">
-        <system-out>
-            <![CDATA[Given Open browser go to url "adminUrl".....................................passed
-Then Admin enters an "adminBoraMail", a "password" and then clicks sign in link on admin page to login.passed
-Then Admin clicks All Activity Logs and Activity Logs links in Dashboard....passed
-Then Admin verifies that the activities in the Login-Logout Activity list are the titles for which they are listed.passed
-And Closes the page.........................................................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="Visibility testing of Login/Logout activities" name="Search test with Quick Search Text Box in Login /Logout Activity list" time="25.994">
-        <system-out>
-            <![CDATA[Given Open browser go to url "adminUrl".....................................passed
-Then Admin enters an "adminBoraMail", a "password" and then clicks sign in link on admin page to login.passed
-Then Admin clicks All Activity Logs and Activity Logs links in Dashboard....passed
-Then Admin verifies that it is possible to search Login - Logout Activity list with Quick Search Text Box.passed
-And Closes the page.........................................................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="Visibility testing of Login/Logout activities" name="Login/Logout Activity Listesindeki sayfalar arasinda gecisler testi" time="19.581">
-        <system-out>
-            <![CDATA[Given Open browser go to url "adminUrl".....................................passed
-Then Admin enters an "adminBoraMail", a "password" and then clicks sign in link on admin page to login.passed
-Then Admin clicks All Activity Logs and Activity Logs links in Dashboard....passed
-Then Test for transitions between pages in Login - Logout Activity List.....passed
+Then Admin clicks Contact Request and contact Mail links in Dashboard.......passed
+Then Admin verifies that clicking the Show link in the Select tab reaches the Contact Mail page.passed
 And Closes the page.........................................................passed
 ]]>
         </system-out>
