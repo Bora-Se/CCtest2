@@ -1,4 +1,4 @@
-
+   @US52
   Feature: Visibility testing of Login/Logout activities
     @US5201
     Scenario: Test to access Login - Logout Activity page with Login Activity link from All Activity Logs menu

@@ -209,26 +209,22 @@ public class TrendLifeBuyPage {
     public WebElement allActivityLogsLink;                                                                       //5201
     @FindBy(xpath = "//a[text()='Login Activity']")   //a[@class='active ']
     public WebElement loginActivityLink;
-
     @FindBy(xpath = "//h3[text()='Login - Logout Activity']")
     public WebElement loginLogoutActivityTitle;
-
     @FindBy(xpath = "//a[text()='Clean All']")   //div[text()='Showing 1 to 10 of 22 entries']
     public WebElement cleanAllButton;            //div[text()='Showing 1 to 10 of 123 entries']                  //5202
-
     @FindBy(xpath = "//input[@id='dataDeleteBtn']")
     public WebElement dataDeleteButton2;  //td[text()='No data available in table']
     @FindBy(xpath = "//a[@id='loginLogoutDataTable_next']")
     public WebElement nextSagTus;                                                                                //5202
-
     @FindBy(xpath = "//td[text()='No data available in table']")
     public WebElement sonucYazisi52NoData;
 
-    //5203  User, Login AT, Logout AT, IP, Agent, Description basliklari altinda listelendigi dogrulanir
-    @FindBy(xpath = "(//tr[@role='row'])[1]")
-    public WebElement loginLogoutActivityBasliklar;                                                              //5203
-    @FindBy(xpath = "//th[text()='User']")
-    public WebElement loginLogoutActivityUser;
+
+    @FindBy(xpath = "(//tr[@role='row'])[1]")                   //5203  User, Login AT, Logout AT, IP, Agent, Description
+    public WebElement loginLogoutActivityBasliklar;
+    @FindBy(xpath = "//th[text()='User']")                                                                     //5203
+    public WebElement loginLogoutActivityUser;                  //5203  User, Login AT, Logout AT, IP, Agent, Description
     @FindBy(xpath = "//th[text()='Login At']")
     public WebElement loginLogoutActivityLoginAt;
     @FindBy(xpath = "//th[text()='Logout At']")
@@ -239,18 +235,13 @@ public class TrendLifeBuyPage {
     public WebElement loginLogoutActivityAgent;
     @FindBy(xpath = "//th[text()='Description']")
     public WebElement loginLogoutActivityDescription;
-
-    // 5204- Quick Search Text Box'i ile Login - Logout Activity listesinde arama yapilabildigi dogrulanmali--calistigi nasil test olur
-
-    @FindBy(xpath = "//input[@type='search']")
+    @FindBy(xpath = "//input[@type='search']")                                    // 5204- Quick Search Text Box'i ile
     public WebElement quickSearchBox;                                                                          //5204
 
     @FindBy(xpath = "//a[text()='1']")
     public WebElement sayfa1Button;                                                                              //5205
-
     @FindBy(xpath = "//a[text()='2']")  //div[@id='loginLogoutDataTable_info']
     public WebElement sayfa2Button;
-
     @FindBy(xpath = "//div[@id='loginLogoutDataTable_info']")
     public WebElement searchBoxInfoYazisi;                                                                     //5205
 

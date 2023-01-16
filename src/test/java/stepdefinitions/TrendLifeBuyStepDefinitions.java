@@ -48,7 +48,7 @@ public class TrendLifeBuyStepDefinitions    {
     @Then("Closes the page")
     public void closes_the_page() {
 
-        //Driver.closeDriver();
+        Driver.closeDriver();
     }
 
     // ========================== ESKILER  ====================
@@ -403,7 +403,8 @@ public class TrendLifeBuyStepDefinitions    {
         actions.sendKeys(Keys.END).perform();
         String sonucYazisi1=life.searchBoxInfoYazisi.getText();
         ReusableMethods.bekle(1);
-        life.sayfa2Button.click();
+        //life.sayfa2Button.click();
+        life.nextSagTus.click();
         ReusableMethods.bekle(1);
         String sonucYazisi2=life.searchBoxInfoYazisi.getText();
         Assert.assertNotEquals(sonucYazisi1,sonucYazisi2);
