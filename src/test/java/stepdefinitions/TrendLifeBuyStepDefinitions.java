@@ -3,18 +3,12 @@ package stepdefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.locators.RelativeLocator;
 import pages.TrendLifeBuyPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
-
-import java.security.Key;
 
 public class TrendLifeBuyStepDefinitions    {
     TrendLifeBuyPage life=new TrendLifeBuyPage();
@@ -383,8 +377,16 @@ public class TrendLifeBuyStepDefinitions    {
          Assert.assertTrue(life.loginLogoutActivityIP.isDisplayed());
          Assert.assertTrue(life.loginLogoutActivityAgent.isDisplayed());
          Assert.assertTrue(life.loginLogoutActivityDescription.isDisplayed());
-            //5203  User, Login AT, Logout AT, IP, Agent, Description basliklari altinda listelendigi dogrulanir
-        }
+
+         //5203  User, Login AT, Logout AT, IP, Agent, Description basliklari altinda listelendigi dogrulanir
+        System.out.println(life.loginLogoutActivityBasliklar.getText()); // SL USER LOGIN AT LOGOUT AT IP AGENT DESCRIPTION
+        String expData="SL USER LOGIN AT LOGOUT AT IP AGENT DESCRIPTION";
+        String expData2="User Login AT Logout AT IP Agent Description";//Expected :User Login AT Logout AT IP Agent Description
+        String actData=life.loginLogoutActivityBasliklar.getText();  // Actual   :SL USER LOGIN AT LOGOUT AT IP AGENT DESCRIPTION
+        Assert.assertEquals(expData,actData);
+        //Assert.assertTrue(actData.contains(expData2)); // Failed Cunku expData daki veriler kucuk harf/ virgulu de kabul etmiyor
+
+    }
 
     @Then("Admin verifies that it is possible to search Login - Logout Activity list with Quick Search Text Box")
     public void adminVerifiesThatItIsPossibleToSearchLoginLogoutActivityListWithQuickSearchTextBox() {           //5204

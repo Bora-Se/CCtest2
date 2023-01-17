@@ -223,8 +223,9 @@ public class TrendLifeBuyPage {
 
     @FindBy(xpath = "(//tr[@role='row'])[1]")                   //5203  User, Login AT, Logout AT, IP, Agent, Description
     public WebElement loginLogoutActivityBasliklar;
-    @FindBy(xpath = "//th[text()='User']")                                                                     //5203
+    @FindBy(xpath = "//th[text()='User']")                                                          //5203
     public WebElement loginLogoutActivityUser;                  //5203  User, Login AT, Logout AT, IP, Agent, Description
+
     @FindBy(xpath = "//th[text()='Login At']")
     public WebElement loginLogoutActivityLoginAt;
     @FindBy(xpath = "//th[text()='Logout At']")

@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="32.107">
-    <testcase classname="Unknown" name="Test to redirect to Contact Mail page when Show link is clicked in Select tab" time="31.649">
-        <system-out>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="24.14">
+    <testcase classname="Visibility testing of Login/Logout activities" name="Test for listing activities in Login/Logout Activity list with User, Login AT, Logout AT, IP, Agent, Description headers" time="23.658">
+        <failure message="" type="java.lang.AssertionError">
             <![CDATA[Given Open browser go to url "adminUrl".....................................passed
 Then Admin enters an "adminBoraMail", a "password" and then clicks sign in link on admin page to login.passed
-Then Admin clicks Contact Request and contact Mail links in Dashboard.......passed
-Then Admin verifies that clicking the Show link in the Select tab reaches the Contact Mail page.passed
-And Closes the page.........................................................passed
+Then Admin clicks All Activity Logs and Activity Logs links in Dashboard....passed
+Then Admin verifies that the activities in the Login-Logout Activity list are the titles for which they are listed.failed
+And Closes the page.........................................................skipped
+
+StackTrace:
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at stepdefinitions.TrendLifeBuyStepDefinitions.adminVerifiesThatTheActivitiesInTheLoginLogoutActivityListAreTheTitlesForWhichTheyAreListed(TrendLifeBuyStepDefinitions.java:387)
+	at ✽.Admin verifies that the activities in the Login-Logout Activity list are the titles for which they are listed(file:///C:/Users/Nuray/IdeaProjects/cc2test/src/test/resources/features/US52ADmin.feature:28)
 ]]>
-        </system-out>
+        </failure>
     </testcase>
 </testsuite>
