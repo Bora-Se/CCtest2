@@ -470,7 +470,6 @@ public class TrendLifeBuyStepDefinitions    {
         System.out.println(efterClickActData);     // Actual   :bitox26925@lance7.com
         Assert.assertNotEquals(foreClickExpData,efterClickActData);
 
-
         /* //  bitox26925@lance7.com    --   u_3_4635293334@wisequarter.com
         WebElement baslikEMAIL= Driver.getDriver().findElement(By.xpath("//th[text()='Email']"));
         //WebElement altEMAILWebElement= Driver.getDriver().findElement(By.xpath("//td[text()='bitox26925@lance7.com']"));
@@ -503,7 +502,6 @@ public class TrendLifeBuyStepDefinitions    {
         String beklenenBirinciData= "test@test.com";
         Assert.assertNotEquals(foreClickExpData,enterQuickSearhBoxData);
         Assert.assertEquals(enterQuickSearhBoxData,beklenenBirinciData);
-
     }
 
     @Then("Admin verifies the visibility of Show and Delete links in Select tab under Action heading")
@@ -550,5 +548,6 @@ public class TrendLifeBuyStepDefinitions    {
         //Assert.assertTrue(life.delectedMessage.isDisplayed());  -??
         //String efterDeleteActData=life.altEMAILWebElementBirinci.getText();
     }
+
 }
 
