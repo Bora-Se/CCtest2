@@ -256,7 +256,6 @@ public class TrendLifeBuyStepDefinitions    {
         //Assert.assertTrue(life.sutunWalletRechargeHistoryTitle.getText().contains(expData1));
         //Assert.assertTrue(life.sutunWalletRechargeHistoryTitle.getText().contains(expData2));
 
-
         // Date   Trx Id   Amount  Type Payment Method Status
     }
 
@@ -302,7 +301,6 @@ public class TrendLifeBuyStepDefinitions    {
         life.addCouponButton.click();
         ReusableMethods.bekle(2);
         //Assert.assertFalse(life.addCouponButton.isDisplayed()); ----???? 2002
-
     }
 
     @Then("User verifies which information the Collected Coupons list is listed")
@@ -366,7 +364,6 @@ public class TrendLifeBuyStepDefinitions    {
         String expData="No data";
         String actData=life.sonucYazisi52NoData.getText();
         Assert.assertTrue(actData.contains(expData));
-
 
     }
     @Then("Admin verifies that the activities in the Login-Logout Activity list are the titles for which they are listed")
@@ -447,8 +444,6 @@ public class TrendLifeBuyStepDefinitions    {
         /*Assert.assertTrue(life.contactMailListNAME.isEnabled());  --- CALISIR
         Assert.assertTrue(life.contactMailListEMAIL.isEnabled());
         Assert.assertTrue(life.contactMailListMESSAGE.isEnabled()); // NAME	EMAIL	MESSAGE*/
-
-
 
         //Assert.assertTrue(life.contactMailListTable.getText().contains("NAME")); // NAME	EMAIL	MESSAGE life.contactMailListNAME.getText()
         //System.out.println(life.contactMailListNAME.getText());  yazmiyor?
@@ -532,15 +527,14 @@ public class TrendLifeBuyStepDefinitions    {
     @Then("Admin verifies that the mail has been deleted with the Delete link in the Select tab under the Action title")
     public void adminVerifiesThatTheMailHasBeenDeletedWithTheDeleteLinkInTheSelectTabUnderTheActionTitle() {    //5408
         String expSonucYazisi1=life.getSonucYazisi54NoData.getText();
-
         //String foreDeleteExpData=life.altEMAILWebElementBirinci.getText();
-
         life.actionsSelectButton.click();
         ReusableMethods.bekle(1);
         life.actionsDeleteButton.click();
         ReusableMethods.bekle(1);
         life.actionsSelectDelete2Button.click();
         ReusableMethods.bekle(1);
+
         String actSonucYazisi2=life.getSonucYazisi54NoData.getText();
         // Peki ikinci sayfada veriler olunca, birinci sayfadan silinen yerine hemen ikinci sayfadan veri gelirse
         Assert.assertNotEquals(expSonucYazisi1,actSonucYazisi2);
