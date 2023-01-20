@@ -1,7 +1,7 @@
 
 Feature:
 
-  Scenario:
+  Scenario: pO9#4bmxU MySQL
   /*
       amazonPage.amazonAramaKutusu.sendKeys(ConfigReader.getProperty("amazonAramaKelimesi")+ Keys.ENTER);
       // sonuclarin arama yaptiginiz kelimeleri icerdigini test edin
